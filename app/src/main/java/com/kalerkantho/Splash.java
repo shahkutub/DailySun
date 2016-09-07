@@ -28,6 +28,7 @@ import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.NetInfo;
 import com.kalerkantho.holder.AllCategory;
+import com.kalerkantho.holder.MagazineCategory;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +48,7 @@ public class Splash extends Activity {
     GPSTracker gps;
     //String SENDER_ID = "257395124016";
     //GoogleCloudMessaging gcm;
-    String regId="",msg="",response_menu="";
+    String regId="",msg="",response_menu="",magazine_menu="";
     static final String TAG = "GCM_CHECK";
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
@@ -116,6 +117,7 @@ public class Splash extends Activity {
                 PersistData.setLongData(con,AppConstant.SystemTime,millis);
 
                 getMenuInfo(AllURL.getMenuList());
+                getMagazineInfo(AllURL.getMagazineMenuList());
             }
 
         }
@@ -221,6 +223,57 @@ public class Splash extends Activity {
                         } catch (final Exception e) {
                             e.printStackTrace();
                             //progressShow.setVisibility(View.GONE);
+                        }
+                    }
+                });
+            }
+        });
+
+
+    }
+
+
+    private void getMagazineInfo(final String url) {
+
+
+
+        //  progressShow.setVisibility(View.VISIBLE);
+        Executors.newSingleThreadScheduledExecutor().submit(new Runnable() {
+
+
+            @Override
+            public void run() {
+
+                try {
+                    magazine_menu = AAPBDHttpClient.get(url).body();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
+
+                        // progressShow.setVisibility(View.GONE);
+
+                        try {
+                            Log.e("Response", ">>" + new String(magazine_menu));
+                            if (!TextUtils.isEmpty(new String(magazine_menu))) {
+
+                                Gson g = new Gson();
+                                MagazineCategory allCategory=g.fromJson(new String(response_menu),MagazineCategory.class);
+
+
+                                if(allCategory.getStatus()==1){
+                                    PersistData.setStringData(getApplicationContext(),AppConstant.magazineCategory,magazine_menu);
+
+                                }
+                            }
+
+                        } catch (final Exception e) {
+                            e.printStackTrace();
+
                         }
                     }
                 });

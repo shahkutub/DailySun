@@ -27,6 +27,7 @@ public class AppConstant {
     public static String GCMID = "gcmid";
     public static String SystemTime = "systemtime";
     public static String CATEGORY_RESPONSE = "category_response";
+    public static String magazineCategory = "magazineCategory";
     public static String HOMERESPONSE = "homeresponse";
     public static List<CommonNewsItem> PHOTOLIST = new ArrayList<CommonNewsItem>();
     public static String CATEGORYTYPE = "";

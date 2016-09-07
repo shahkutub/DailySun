@@ -42,6 +42,11 @@ public class AllURL {
 		final Vector<KeyValue> temp = new Vector();
 		return getcommonURLWithParamAndAction("menu_list", temp);
 	}
+
+	public static String getMagazineMenuList() {
+		final Vector<KeyValue> temp = new Vector();
+		return getcommonURLWithParamAndAction("magazine_list", temp);
+	}
 	public static String pushIDURL() {
 		final Vector<KeyValue> temp = new Vector();
 		return getcommonURLWithParamAndAction("push-id-register", temp);
