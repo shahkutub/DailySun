@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     android:id="@+id/mainLayout"
     android:padding="3dp"
-
     android:background="@color/homTop">
 
     <TextView
