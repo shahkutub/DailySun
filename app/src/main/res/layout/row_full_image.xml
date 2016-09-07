@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fullscreen_image_height"
+        android:layout_height="@dimen/dim180"
         android:layout_marginLeft="@dimen/dim10"
         android:layout_marginRight="@dimen/dim10"
         android:background="@color/blackNero">
@@ -31,7 +31,7 @@
                 android:layout_marginTop="5dp"
                 android:maxLines="2"
                 android:text="Titel"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
