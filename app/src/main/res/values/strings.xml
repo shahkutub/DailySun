@@ -62,10 +62,19 @@
     <string name="vivration2">ভাইব্রেসন নোটিফিকেশন</string>
     <string name="privacy1">প্রাইভেসি পলিসি</string>
 
-    <string name="tram1">ট্রামস অ্যান্ড কন্ডিশন </string>
+    <string name="notification1">Notification</string>
+    <string name="notification2">Breaking News Notification</string>
+    <string name="notification3">You can directly get Breaking news from Daily Sun</string>
+    <string name="sound1">Sound</string>
+    <string name="sound2">Get Sound Notification</string>
+    <string name="vivration1">Vibration</string>
+    <string name="vivration2">Get Vibration Notification</string>
+    <string name="privacy1">Privacy Policy</string>
+    <string name="tram1">Terms and Condition</string>
+    <string name="tram2">User Policy</string>
+    <string name="help">Help</string>
 
-    <string name="tram2">ব্যবহারকারির পলিসি</string>
-    <string name="help">সাহায্য</string>
+
     <string name="motamotyour">আপনার মতামত জানান</string>
     <string name="your_comment">আপনার মন্তব্য জানান</string>
     <string name="subject">বিষয়</string>
@@ -89,10 +98,6 @@
     <string name="setting">Settings</string>
     <string name="helps">Help</string>
     <string name="feedback">Send Feedback</string>
-
-
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->

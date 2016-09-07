@@ -2,6 +2,7 @@
 
     <!-- Xlarge dimen -->
      <dimen name="fullscreen_image_height">250dp</dimen>
+    <dimen name="dim180">220dp</dimen>
     <dimen name="default_imageh">160dp</dimen>
     <dimen name="default_imagew">210dp</dimen>
     <dimen name="space">10dp</dimen>
