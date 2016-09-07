@@ -76,12 +76,12 @@ public class MostReadFragment extends Fragment {
                 }
 
                 mostReadNewRecList= (RecyclerView) getView().findViewById(R.id.mostReadNewRecList);
-                mostReadBg = (ProgressBar) getView().findViewById(R.id.mostReadBg);
-                mostReadNewRecList.setLayoutManager(new GridLayoutManager(con, 2));
-                RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
-                mostReadNewRecList.addItemDecoration(dividerItemDecoration);
 
                 mostReadNewRecList.setLayoutManager(new LinearLayoutManager(con));
+                mostReadBg = (ProgressBar) getView().findViewById(R.id.mostReadBg);
+                RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
+                mostReadNewRecList.addItemDecoration(dividerItemDecoration);
+                mAdapter = new MostReadRecyAdapter(con, mostRead, null);
                 mostReadNewRecList.setAdapter(mAdapter);
             }
 
