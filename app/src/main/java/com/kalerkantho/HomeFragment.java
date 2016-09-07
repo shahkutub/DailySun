@@ -29,6 +29,7 @@ import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.DividerItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
+import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllCommonNewsItem;
 import com.kalerkantho.holder.AllNewsObj;
 
@@ -73,8 +74,10 @@ public class HomeFragment extends Fragment {
         mRecyclerView = (RecyclerView) getView().findViewById(R.id.recyclerview);
 
         Drawable dividerDrawable = ContextCompat.getDrawable(con, R.drawable.divider);
-        RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecoration(dividerDrawable);
+        RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
         mRecyclerView.addItemDecoration(dividerItemDecoration);
+
+
 
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(con);
