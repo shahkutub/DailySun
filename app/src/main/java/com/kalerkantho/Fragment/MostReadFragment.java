@@ -27,6 +27,7 @@ import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.GridSpacingItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
+import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllCommonNewsItem;
 import com.kalerkantho.holder.AllNewsObj;
 
@@ -77,10 +78,10 @@ public class MostReadFragment extends Fragment {
                 mostReadNewRecList= (RecyclerView) getView().findViewById(R.id.mostReadNewRecList);
                 mostReadBg = (ProgressBar) getView().findViewById(R.id.mostReadBg);
                 mostReadNewRecList.setLayoutManager(new GridLayoutManager(con, 2));
-                GridSpacingItemDecoration itemDecoration = new GridSpacingItemDecoration(con, R.dimen.space);
-                mostReadNewRecList.addItemDecoration(itemDecoration);
+                RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
+                mostReadNewRecList.addItemDecoration(dividerItemDecoration);
 
-                mAdapter = new MostReadRecyAdapter(con,mostRead,null);
+                mostReadNewRecList.setLayoutManager(new LinearLayoutManager(con));
                 mostReadNewRecList.setAdapter(mAdapter);
             }
 

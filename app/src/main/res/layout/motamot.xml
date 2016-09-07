@@ -2,14 +2,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/blackNero"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/homTop"
+        android:background="@color/orange"
         android:orientation="horizontal"
         android:padding="@dimen/dim10">
 
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dim30"
+            android:layout_marginLeft="@dimen/dim20"
             android:layout_toRightOf="@+id/imgBackComment"
             android:text="@string/motamot"
             android:textColor="@color/whiteMy"
@@ -50,7 +50,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/dim40"
         android:text="@string/motamotyour"
-        android:textColor="@android:color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -68,8 +68,10 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="@string/subject"
+            android:textColorHint="@color/white"
             android:inputType="textCapSentences"
             android:maxLines="1"
+            android:layout_marginLeft="@dimen/dim10"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:singleLine="true"
@@ -77,8 +79,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/homTop"></View>
+            android:layout_height="1px"
+            android:background="@color/white"></View>
 
         <EditText
             android:id="@+id/detailsEditText"
@@ -86,10 +88,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@null"
-            android:hint="@string/detailss"
+            android:layout_marginLeft="@dimen/dim10"
             android:inputType="textCapSentences"
             android:maxLines="1"
-
+            android:textColorHint="@color/white"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:singleLine="true"
@@ -98,8 +100,8 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/homTop"></View>
+            android:layout_height="1px"
+            android:background="@color/white"></View>
 
     </LinearLayout>
 
