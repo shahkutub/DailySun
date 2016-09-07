@@ -29,7 +29,7 @@ public class TabFragment extends Fragment {
     public static ViewPager viewPager;
    public static int int_items = 9;
     private int fragmentPos=0;
-    private String tabTitles[] = new String[] { "হোম", "শীর্ষ সংবাদ", "সর্বশেষ সংবাদ", "সর্বাধিক দর্শন", "নির্বাচিত সংবাদ", "প্রিন্ট ভার্সন", "নির্বাচিত ক্যাটাগরি","বিষয় পছন্দ করুন","সকল সংবাদ"};
+    private String tabTitles[] = new String[] { "Home", "Top News", "Latest News", "Most Read", "Selected News", "Print Version", "Feature News","Magazine","All News"};
     private MyAdapter adapter;
 
     @Override
