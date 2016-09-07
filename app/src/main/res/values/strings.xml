@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">কালের কন্ঠ</string>
-    <string name="pretex_details">I saw this on the Kalerkontho App and thought you should see it:\n\n</string>
+    <string name="app_name">Daily Sun</string>
+    <string name="pretex_details">I saw this on the Daily Sun App and thought you should see it:\n\n</string>
 
     <string name="action_settings">Settings</string>
     <string name="home">Home</string>
 
-    <string name="no">না </string>
-    <string name="status">অনুরোধ </string>
-    <string name="latest_news">সর্বশে  সংবাদ</string>
+    <string name="no">No</string>
+    <string name="status">Status</string>
+    <string name="latest_news">Latest News</string>
     <string name="top_news">Top News</string>
-    <string name="most_views_news">সকল সংবাদ</string>
-    <string name="first_page"> প্রথম পাতা </string>
+    <string name="most_views_news">All News</string>
+    <string name="first_page">First Page</string>
     <string name="popular_stories">Popular Stories</string>
     <string name="print_version">Print Version</string>
-    <string name="last_page"> শেষের পাতা </string>
-    <string name="special_news"> স্পেশাল নিউজ </string>
-    <string name="others_news">ভিন্ন ধরনের খবর </string>
+    <string name="last_page">Last Page</string>
+    <string name="special_news">Special News</string>
+    <string name="others_news">Feature News</string>
     <string name="bibid"> বিবিধ </string>
     <string name="aro">More</string>
     <string name="month1">জানুয়ারী</string>
@@ -30,19 +30,20 @@
     <string name="month10">অক্টবর</string>
     <string name="month11">নভেম্বর</string>
     <string name="month12">ডিসেম্বর</string>
-    <string name="registration">রেজিস্ট্রেশান</string>
-    <string name="name">নাম</string>
-    <string name="email">ই-মেইল</string>
-    <string name="password">পাসওয়ার্ড </string>
-    <string name="enter">প্রবেশ করুন</string>
-    <string name="login">লগইন</string>
-    <string name="login_first">মতামত দিতে লগইন করুন </string>
-    <string name="login_first_comment">মন্তব্য দিতে লগইন করুন </string>
-    <string name="provide_subject">দয়াকরে বিষয় লিখুন</string>
-    <string name="provide_details">দয়াকরে বিস্তারিত লিখুন</string>
-    <string name="provide_name">দয়াকরে নাম লিখুন</string>
-    <string name="provide_email">দয়াকরে ই-মেইল লিখুন</string>
-    <string name="provide_password">দয়াকরে পাসওয়ার্ড লিখুন</string>
+    <string name="registration">Registration</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="enter">Log In</string>
+    <string name="login">Login</string>
+    <string name="login_first">Login first to submit feedback.</string>
+    <string name="login_first_comment">Login first to make comment.</string>
+    <string name="provide_subject">Write Subject</string>
+    <string name="provide_details">Write Details</string>
+    <string name="provide_name">Enter Name</string>
+    <string name="provide_email">Enter Email</string>
+    <string name="provide_password">Enter Password</string>
+
 
 
     <string name="nijoso">নিজস্ব পছন্দের</string>
@@ -52,6 +53,14 @@
     <string name="likesubject">পছন্দের বিষয়</string>
     <string name="subjectselect">বিষয় নির্বাচন</string>
 
+    <string name="notification1">নোটিফিকেশন</string>
+    <string name="notification2">ব্রেকিং নিউজ নোটিফিকেশন</string>
+    <string name="notification3">কালেরকন্ঠ সরাসরি ব্রেকিং নিউজ পাঠাতে পারবে আপনার ডিভাইসে</string>
+    <string name="sound1">সাউন্ড</string>
+    <string name="sound2">সাউন্ড নোটিফিকেশন</string>
+    <string name="vivration1">ভাইব্রেসন</string>
+    <string name="vivration2">ভাইব্রেসন নোটিফিকেশন</string>
+    <string name="privacy1">প্রাইভেসি পলিসি</string>
 
     <string name="notification1">Notification</string>
     <string name="notification2">Breaking News Notification</string>
@@ -80,17 +89,19 @@
     <string name="catlist">ক্যাটাগরি তালিকা</string>
 
 
-    <string name="follow">ফলো</string>
 
 
-    <string name="refresh">রিফ্রেশ সাইট</string>
-    <string name="setting">সেটিং</string>
-    <string name="helps">হেল্প</string>
-    <string name="feedback">ফীডব্যাক পাঠাও</string>
+    <string name="follow">Follow</string>
+
+
+    <string name="refresh">Refresh</string>
+    <string name="setting">Settings</string>
+    <string name="helps">Help</string>
+    <string name="feedback">Send Feedback</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="details">বিস্তারিত</string>
-    <string name="favorite">ফেভারিট</string>
+    <string name="details">Details</string>
+    <string name="favorite">Favorite</string>
 </resources>
