@@ -23,7 +23,7 @@
             android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SUBMIT"
+            android:text="Submit"
             android:layout_gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="@color/whiteMy" />
@@ -47,7 +47,7 @@
 
         <EditText
             android:id="@+id/etEmailLogin"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="@string/email"
@@ -55,31 +55,31 @@
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:textColorHint="@color/white"
-            android:paddingBottom="10dp"
-            android:paddingTop="20dp"
+            android:paddingBottom="@dimen/dim10"
+            android:paddingTop="@dimen/dim20"
             android:singleLine="true"
             android:textColor="@android:color/white" />
 
         <View
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/white" />
 
         <EditText
             android:id="@+id/etPaswordLogin"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:maxLines="1"
             android:textColorHint="@color/white"
-            android:paddingBottom="10dp"
-            android:paddingTop="20dp"
+            android:paddingBottom="@dimen/dim10"
+            android:paddingTop="@dimen/dim20"
             android:layout_marginLeft="@dimen/dim10"
             android:singleLine="true" />
         <View
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/white" />
     </LinearLayout>

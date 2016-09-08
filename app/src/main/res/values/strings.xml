@@ -76,13 +76,13 @@
 
 
     <string name="motamotyour">Write your opinion</string>
-    <string name="your_comment">আপনার মন্তব্য জানান</string>
+    <string name="your_comment">Your Comment</string>
     <string name="subject">Subject</string>
     <string name="detailss">বিস্তারিত লিখুন</string>
     <string name="motamot">Opinion</string>
-    <string name="comment">মন্তব্য </string>
+    <string name="comment">Comment</string>
     <string name="comment_please">মন্তব্য করুন </string>
-    <string name="write_comment">মন্তব্য লিখুন ... </string>
+    <string name="write_comment">Write Here...</string>
     <string name="write_comment_pleas">দয়াকরে মন্তব্য লিখুন</string>
     <string name="comment_succes">আপনার মূল্যবান মন্তব্যের জন্য ধন্যবাদ !!!</string>
     <string name="thanks">Thank you for your valuable opinion!!!</string>

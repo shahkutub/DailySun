@@ -17,9 +17,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import com.dailysun.R;
+
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistData;
+import com.dailysun.R;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.kalerkantho.Adapter.RecyclerAdapter;
@@ -27,7 +28,6 @@ import com.kalerkantho.Model.All_Cat_News_Obj;
 import com.kalerkantho.Model.CommonNewsItem;
 import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
-import com.kalerkantho.Utils.DividerItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
 import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllCommonNewsItem;
@@ -76,8 +76,6 @@ public class HomeFragment extends Fragment {
         Drawable dividerDrawable = ContextCompat.getDrawable(con, R.drawable.divider);
         RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
         mRecyclerView.addItemDecoration(dividerItemDecoration);
-
-
 
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(con);

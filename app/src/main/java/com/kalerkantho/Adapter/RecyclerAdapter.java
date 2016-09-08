@@ -205,7 +205,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 commonHolder.commonCategory.setText(newsitem.getNews_obj().getCategory_name());
             }else{
                 commonHolder.commonCategory.setText("");
-                commonHolder.divderView.setVisibility(View.GONE);
+                //commonHolder.divderView.setVisibility(View.GONE);
             }
 
 
@@ -309,7 +309,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 commonHolder.commonCategory.setText(newsitem.getNews_obj().getCategory_name());
             }else{
                 commonHolder.commonCategory.setText("");
-                commonHolder.divderView.setVisibility(View.GONE);
+               // commonHolder.divderView.setVisibility(View.GONE);
             }
 
 
@@ -395,11 +395,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
         TextView commonDateTime;
         TextView commonCategory;
         LinearLayout commonView;
-        View divderView;
+        //View divderView;
 
         public DataTwo(View v) {
             super(v);
-            divderView = (View) v.findViewById(R.id.divderView);
+            //divderView = (View) v.findViewById(R.id.divderView);
             commonImage = (ImageView) v.findViewById(R.id.imag_comm);
             commonTitle = (TextView) v.findViewById(R.id.commonTitle);
             commonDateTime = (TextView) v.findViewById(R.id.comDateTime);
@@ -434,7 +434,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
         TextView commonDateTime;
         TextView commonCategory;
         LinearLayout commonView;
-        //View divderView;
+       // View divderView;
 
         public DataFive(View v) {
             super(v);

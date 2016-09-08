@@ -75,7 +75,9 @@ public class HelpDialogFragment extends DialogFragment {
         helpWeb.clearHistory();
 
         helpWeb.getSettings().setJavaScriptEnabled(true);
-        helpWeb.getSettings().setDefaultZoom(WebSettings.ZoomDensity.MEDIUM);
+        //helpWeb.getSettings().setDefaultZoom(WebSettings.ZoomDensity.MEDIUM);
+        helpWeb.getSettings().setBuiltInZoomControls(true);
+        helpWeb.setInitialScale(1);
         helpWeb.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
         helpWeb.getSettings().setUserAgentString("silly_that_i_have_to_do_this");
         helpWeb.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);

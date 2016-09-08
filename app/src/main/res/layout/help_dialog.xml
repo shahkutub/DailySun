@@ -10,6 +10,15 @@
         android:background="@color/homTop"
         android:padding="5dp"
       >
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="20sp"
+            android:textColor="@color/whiteMy" />
+
         <ImageView
             android:id="@+id/dissmissHelpBtn"
             android:layout_width="wrap_content"
@@ -17,15 +26,6 @@
             android:padding="@dimen/dim10"
             android:src="@drawable/cross_white" />
 
-        <TextView
-            android:id="@+id/tvLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/dissmissHelpBtn"
-            android:gravity="center"
-            android:text=""
-            android:textSize="20sp"
-            android:textColor="@color/whiteMy" />
     </RelativeLayout>
 
 

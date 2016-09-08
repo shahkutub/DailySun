@@ -9,7 +9,8 @@
     <dimen name="spacepad">1dp</dimen>
 
 
-
+    <dimen name="_imageh">90dp</dimen>
+    <dimen name="_imagew">120dp</dimen>
 
     <dimen name="grid_imageh">120dp</dimen>
     <dimen name="grid_imagew">160dp</dimen>
