@@ -39,7 +39,9 @@
                 android:layout_width="match_parent"
                 android:layout_alignBottom="@+id/imag_comm"
                 android:layout_height="@dimen/dim40"
-                android:background="#80000000"
+                android:background="@drawable/view_bg"
+                android:paddingLeft="@dimen/dim10"
+                android:paddingRight="@dimen/dim10"
                 android:visibility="visible"
               >
                 <TextView
@@ -50,12 +52,14 @@
                     android:maxLines="2"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
+                    android:background="@android:color/transparent"
                     android:textStyle="bold" />
                 <RelativeLayout
                     android:layout_marginLeft="@dimen/dim10"
                     android:layout_width="match_parent"
                     android:layout_marginBottom="5dp"
                     android:layout_alignParentBottom="true"
+                    android:background="@android:color/transparent"
                     android:layout_height="wrap_content">
                     <TextView
                         android:id="@+id/common_cat"
@@ -66,11 +70,12 @@
                         android:textSize="12sp" />
                     <TextView
                         android:id="@+id/comDateTime"
-                        android:layout_alignParentRight="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dim20"
                         android:gravity="end"
                         android:text="Date"
+                        android:layout_toRightOf="@+id/common_cat"
                         android:textColor="@color/orange"
                         android:textSize="12sp" />
 
