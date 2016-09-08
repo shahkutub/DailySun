@@ -16,7 +16,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -33,9 +32,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.dailysun.R;
+
 import com.aapbd.utils.storage.PersistData;
+import com.dailysun.R;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -493,6 +492,7 @@ public class MainActivity extends AppCompatActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 SettingFragment fragment = new SettingFragment();
                 mFragmentTransaction = mFragmentManager.beginTransaction();
                 mFragmentTransaction.replace(R.id.containerView, fragment).commit();
@@ -589,18 +589,7 @@ public class MainActivity extends AppCompatActivity {
         optionMenuList.add(2, getResources().getString(R.string.helps));
         optionMenuList.add(3, getResources().getString(R.string.feedback));
         setupToolbar();
-        /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name);
-         mDrawerLayout.setDrawerListener(mDrawerToggle);
-         mDrawerToggle.syncState();*/
 
-
-        // set here nav icon if want to change
-        //  toolbar.setNavigationIcon(R.id.nav_icon);
-
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client2 = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -1100,14 +1089,13 @@ public class MainActivity extends AppCompatActivity {
                         }).playOn(mainDialog);*/
 
 
-                return true;
+                //return true;
 
             case R.id.settinItem:
                 SettingFragment fragment = new SettingFragment();
                 mFragmentTransaction = mFragmentManager.beginTransaction();
                 mFragmentTransaction.replace(R.id.containerView, fragment).commit();
                 mDrawerLayout.closeDrawers();
-
                 return true;
 
             case R.id.helpItem:

@@ -16,31 +16,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistData;
+import com.dailysun.R;
 import com.google.gson.Gson;
 import com.kalerkantho.Dialog.ConditionDialogFragment;
 import com.kalerkantho.Dialog.HelpDialogFragment;
 import com.kalerkantho.Dialog.PrivacyPolicyDialogFragment;
-import com.kalerkantho.Model.LoginResponse;
-import com.dailysun.R;
 import com.kalerkantho.Utils.AlertMessage;
 import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
-import com.kalerkantho.Utils.BusyDialog;
 import com.kalerkantho.Utils.NetInfo;
 import com.kalerkantho.Utils.PersistentUser;
 import com.kalerkantho.holder.AllCommonResponse;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
-;import java.util.concurrent.Executors;
+import java.util.concurrent.Executors;
 
-import cz.msebera.android.httpclient.Header;
+;
 
 
 public class SettingFragment extends Fragment {
@@ -84,8 +78,8 @@ public class SettingFragment extends Fragment {
         tramTitle = (TextView) getView().findViewById(R.id.tramTitle);
         helpHead = (TextView) getView().findViewById(R.id.helpHead);
         helpTitle = (TextView) getView().findViewById(R.id.helpTitle);
-//        ViewShowTop = (RelativeLayout) getView().findViewById(R.id.ViewShowTop);
-//        imgBackSetting = (ImageView) getView().findViewById(R.id.imgBackSetting);
+       ViewShowTop = (RelativeLayout) getView().findViewById(R.id.ViewShowTop);
+        imgBackSetting = (ImageView) getView().findViewById(R.id.imgBackSetting);
 
         notificationTg = (ToggleButton) getView().findViewById(R.id.notificationTg);
         soundTg = (ToggleButton) getView().findViewById(R.id.soundTg);
