@@ -64,7 +64,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
         {
             position=4;
 
-        }else if(newslist.get(position).getType().equalsIgnoreCase("defaultscreen1"))
+        }else if(newslist.get(position).getType().equalsIgnoreCase("default_full_screen"))
        {
            position=5;
 
@@ -99,6 +99,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 View viewFive = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_full_image, parent, false);
                 DataFive rowFive = new DataFive(viewFive);
                 return rowFive;
+
 
         }
         return null;
@@ -308,7 +309,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 commonHolder.commonCategory.setText(newsitem.getNews_obj().getCategory_name());
             }else{
                 commonHolder.commonCategory.setText("");
-                //commonHolder.divderView.setVisibility(View.GONE);
+                commonHolder.divderView.setVisibility(View.GONE);
             }
 
 
@@ -445,4 +446,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
             commonView = (LinearLayout) v.findViewById(R.id.commonView);
         }
     }
+
 }
