@@ -7,56 +7,77 @@
     <RelativeLayout
         android:id="@+id/topWhite"
         android:layout_width="match_parent"
-        android:layout_height="10dp"></RelativeLayout>
+        android:layout_height="100dp"
+        android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/imgFvrt"
-        android:layout_width="@dimen/grid_imagew"
-        android:layout_height="@dimen/grid_imageh"
-        android:src="@drawable/defaulticon"
-        android:layout_below="@+id/topWhite"
-        android:scaleType="fitXY"
-        android:layout_centerHorizontal="true" />
+        <ImageView
+            android:id="@+id/fvrtBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/fav_off" />
 
-    <TextView
-        android:id="@+id/fvrtTxtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgFvrt"
-        android:layout_marginLeft="15sp"
-        android:text=""
-        android:maxLines="2"
-        android:lines="2"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/imgFvrt"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/dim10" />
 
-    <TextView
-        android:id="@+id/fvrtCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fvrtTxtTitle"
-        android:layout_marginLeft="15sp"
-        android:text=""
-        android:textColor="#0089CF"
-        android:textSize="16sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/imgFvrt"
+            android:layout_toRightOf="@+id/fvrtBtn">
 
-    <TextView
-        android:id="@+id/dateFvrt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fvrtCategory"
-        android:layout_marginLeft="15sp"
-        android:text=""
-        android:textColor="#bfc9ca"
-        android:textSize="10sp" />
+            <TextView
+                android:id="@+id/fvrtTxtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:lines="2"
+                android:maxLines="2"
+                android:text="Titel"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/fvrtBtn"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/fvrtCategory"
-        android:layout_marginRight="15sp"
-        android:layout_marginTop="-10dp" />
+            <TextView
+                android:id="@+id/fvrtTxtTi"
+                android:layout_below="@+id/fvrtTxtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:lines="1"
+                android:maxLines="1"
+                android:textSize="12sp"
+                android:text="Titel"
+                android:textColor="@color/black" />
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/fvrtCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:textColor="@color/orange"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/dateFvrt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Date"
+                    android:layout_marginBottom="@dimen/dim10"
+                    android:textColor="@color/orange"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/homTop">
+    android:background="@color/homTop"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/backView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <ImageView
+            android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/backBtn"
-            android:layout_margin="10dp"
             android:layout_centerVertical="true"
-            android:background="@drawable/back_button"/>
+            android:layout_margin="10dp"
+            android:background="@drawable/back_button" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/titleDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="@string/details"
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/backView"/>
+        android:layout_toRightOf="@+id/backView"
+        android:text="@string/details"
+        android:textColor="@color/white" />
 
     <LinearLayout
         android:id="@+id/settingBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/dim07"
-        android:padding="@dimen/dim10"
-        android:layout_centerInParent="true"
         android:layout_alignParentRight="true"
-        android:orientation="vertical">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:background="@drawable/setting_white"></ImageView>
+        android:layout_centerInParent="true"
+        android:layout_marginRight="@dimen/dim07"
+        android:orientation="vertical"
+        android:padding="@dimen/dim10">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/setting_white"></ImageView>
     </LinearLayout>
 
     <LinearLayout
@@ -51,35 +54,32 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/dim10"
-        android:padding="10dp"
         android:layout_toLeftOf="@+id/settingBtn"
         android:orientation="vertical"
-        >
+        android:padding="10dp">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/share_white"
-            />
+            android:background="@drawable/share_white" />
 
     </LinearLayout>
 
 
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:id="@+id/favrtBtn"
-    android:layout_centerVertical="true"
-    android:layout_toLeftOf="@+id/shareBtn"
-    android:padding="10dp"
-    android:layout_marginRight="@dimen/dim10"
-    >
-    <ImageView
-        android:id="@+id/favImage"
+    <LinearLayout
+        android:id="@+id/favrtBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/fav_white"
-        />
-</LinearLayout>
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dim10"
+        android:layout_toLeftOf="@+id/shareBtn"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/favImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fav_white" />
+    </LinearLayout>
 </RelativeLayout>
