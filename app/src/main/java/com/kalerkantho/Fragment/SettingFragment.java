@@ -84,8 +84,8 @@ public class SettingFragment extends Fragment {
         tramTitle = (TextView) getView().findViewById(R.id.tramTitle);
         helpHead = (TextView) getView().findViewById(R.id.helpHead);
         helpTitle = (TextView) getView().findViewById(R.id.helpTitle);
-        ViewShowTop = (RelativeLayout) getView().findViewById(R.id.ViewShowTop);
-        imgBackSetting = (ImageView) getView().findViewById(R.id.imgBackSetting);
+//        ViewShowTop = (RelativeLayout) getView().findViewById(R.id.ViewShowTop);
+//        imgBackSetting = (ImageView) getView().findViewById(R.id.imgBackSetting);
 
         notificationTg = (ToggleButton) getView().findViewById(R.id.notificationTg);
         soundTg = (ToggleButton) getView().findViewById(R.id.soundTg);

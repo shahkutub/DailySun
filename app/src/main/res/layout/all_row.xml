@@ -9,11 +9,11 @@
         android:id="@+id/headlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="#A9A9A9"
+        android:padding="@dimen/dim10"
+        android:paddingLeft="@dimen/dim20"
         android:paddingTop="5dp"
-        android:paddingLeft="30dp"
-        android:paddingBottom="5dp"
-        android:textSize="18sp"/>
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
 </LinearLayout>

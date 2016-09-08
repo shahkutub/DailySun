@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.kalerkantho.Model.DetailsModel;
 import com.kalerkantho.Model.FvrtModel;
 import com.kalerkantho.MyDb.MyDBHandler;
 import com.dailysun.R;
+import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllNewsObj;
 
 import java.util.ArrayList;
@@ -67,10 +69,10 @@ public class FavoriteFragment extends Fragment {
             allDetailsList.add(dm);
         }
 
-        favList.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(con,2);
-        favList.setLayoutManager(layoutManager);
-
+//        favList.setHasFixedSize(true);
+        favList.setLayoutManager(new LinearLayoutManager(con));
+        RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
+        favList.addItemDecoration(dividerItemDecoration);
         fAdapter  = new FavrtRecycleAdapter(getActivity(),allDetailsList,null);
         favList.setAdapter(fAdapter);
     }

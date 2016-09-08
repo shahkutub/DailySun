@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -26,6 +27,7 @@ import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.GridSpacingItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
+import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllCommonNewsItem;
 import com.kalerkantho.holder.AllNewsObj;
 
@@ -78,9 +80,10 @@ public class LatestNewsFragment extends Fragment {
 
                 latestNewRecList= (RecyclerView) getView().findViewById(R.id.latestNewRecList);
                 latestNewBg = (ProgressBar) getView().findViewById(R.id.latestNewBg);
-                latestNewRecList.setLayoutManager(new GridLayoutManager(con, 2));
-                GridSpacingItemDecoration itemDecoration = new GridSpacingItemDecoration(con, R.dimen.space);
-                latestNewRecList.addItemDecoration(itemDecoration);
+                latestNewRecList.setLayoutManager(new LinearLayoutManager(con));
+                RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
+                latestNewRecList.addItemDecoration(dividerItemDecoration);
+
 
                 lAdapter = new LatestRecyAdapter(con,latestNews,null);
                 latestNewRecList.setAdapter(lAdapter);
