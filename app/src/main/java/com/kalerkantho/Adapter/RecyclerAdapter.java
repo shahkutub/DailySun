@@ -64,7 +64,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
         {
             position=4;
 
-        }else if(newslist.get(position).getType().equalsIgnoreCase("defaultscreen1"))
+        }else if(newslist.get(position).getType().equalsIgnoreCase("default_full_screen"))
        {
            position=5;
 
@@ -97,8 +97,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 return rowFour;
             case 5:
                 View viewFive = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_full_image, parent, false);
-                DataFour rowFive = new DataFour(viewFive);
+                DataFive rowFive = new DataFive(viewFive);
                 return rowFive;
+
 
         }
         return null;
@@ -282,8 +283,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
             hAdapter = new HorizontalRecyAdapter(mContext,newsitem1.getList_news_obj());
             hListHolder.horizontal_recycler_view.setAdapter(hAdapter);
             hAdapter.notifyDataSetChanged();
-        }else if(holder.getItemViewType() == dataTwo){
-            DataTwo commonHolder = (DataTwo)holder;
+        }else if(holder.getItemViewType() == dataFive){
+            DataFive commonHolder = (DataFive)holder;
 
             if (!(TextUtils.isEmpty(newsitem.getNews_obj().getImage()))) {
                 Glide.with(mContext).load(newsitem.getNews_obj().getImage()).placeholder(R.drawable.defaulticon).into(commonHolder.commonImage);
@@ -445,4 +446,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
             commonView = (LinearLayout) v.findViewById(R.id.commonView);
         }
     }
+
 }
