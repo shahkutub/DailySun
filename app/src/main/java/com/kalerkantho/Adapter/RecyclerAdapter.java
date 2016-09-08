@@ -35,6 +35,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
     public static final int dataTwo = 2;
     public static final int dataThree = 3;
     public static final int dataFour = 4;
+    public static final int dataFive = 5;
 
     public RecyclerAdapter(Activity context, List<AllCommonNewsItem> newslist) {
         this.newslist = newslist;
@@ -63,7 +64,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
         {
             position=4;
 
-        }
+        }else if(newslist.get(position).getType().equalsIgnoreCase("defaultscreen1"))
+       {
+           position=5;
+
+       }
 
         return position;
 
@@ -90,6 +95,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 View viewFour = LayoutInflater.from(parent.getContext()).inflate(R.layout.footer_horizontallist_item, parent, false);
                 DataFour rowFour = new DataFour(viewFour);
                 return rowFour;
+            case 5:
+                View viewFive = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_full_image, parent, false);
+                DataFour rowFive = new DataFour(viewFive);
+                return rowFive;
 
         }
         return null;
@@ -273,6 +282,68 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
             hAdapter = new HorizontalRecyAdapter(mContext,newsitem1.getList_news_obj());
             hListHolder.horizontal_recycler_view.setAdapter(hAdapter);
             hAdapter.notifyDataSetChanged();
+        }else if(holder.getItemViewType() == dataTwo){
+            DataTwo commonHolder = (DataTwo)holder;
+
+            if (!(TextUtils.isEmpty(newsitem.getNews_obj().getImage()))) {
+                Glide.with(mContext).load(newsitem.getNews_obj().getImage()).placeholder(R.drawable.defaulticon).into(commonHolder.commonImage);
+            } else {
+                Glide.with(mContext).load(R.drawable.defaulticon).placeholder(R.drawable.defaulticon).into(commonHolder.commonImage);
+            }
+
+            if (!TextUtils.isEmpty(newsitem.getNews_obj().getTitle())) {
+                commonHolder.commonTitle.setText(newsitem.getNews_obj().getTitle());
+
+            } else {
+                commonHolder.commonTitle.setText("");
+            }
+
+            if (!TextUtils.isEmpty(newsitem.getNews_obj().getBanglaDateString())){
+                commonHolder.commonDateTime.setText(newsitem.getNews_obj().getBanglaDateString());
+            }else{
+                commonHolder.commonDateTime.setText("");
+            }
+
+            if (!TextUtils.isEmpty(newsitem.getNews_obj().getCategory_name())){
+                commonHolder.commonCategory.setText(newsitem.getNews_obj().getCategory_name());
+            }else{
+                commonHolder.commonCategory.setText("");
+                commonHolder.divderView.setVisibility(View.GONE);
+            }
+
+
+            commonHolder.commonCategory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppConstant.CATEGORYTYPE = newsitem.getNews_obj().getCategory();
+                    AppConstant.CATEGORYTITLE= newsitem.getNews_obj().getCategory_name();
+                    Log.e("Category Type",""+ AppConstant.CATEGORYTYPE );
+                    CatListDialogFragment dialogCatList= new CatListDialogFragment();
+                    dialogCatList.setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar);
+                    dialogCatList.show(mContext.getFragmentManager(), "");
+                }
+            });
+
+
+            commonHolder.commonView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Log.e("DDD"," here  "+id);
+                    id = newsitem.getNews_obj().getId();
+                    Intent i = new Intent(mContext, DetailsActivity.class);
+                    i.putExtra("content_id",id);
+                    i.putExtra("is_favrt","0");
+                    mContext.startActivity(i);
+
+
+                }
+            });
+
+            commonHolder.commonTitle.setTypeface(face_bold);
+            commonHolder.commonDateTime.setTypeface(face_reg);
+            commonHolder.commonCategory.setTypeface(face_reg);
+
         }
 
 
@@ -349,10 +420,29 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
     }
 
     public class DataFour extends CustomViewHolder {
-       private RecyclerView horizontal_recycler_view;
+        private RecyclerView horizontal_recycler_view;
         public DataFour(View v) {
             super(v);
             horizontal_recycler_view = (RecyclerView) v.findViewById(R.id.horizontal_recycler_view);
+        }
+    }
+
+    public class DataFive extends CustomViewHolder {
+        ImageView commonImage;
+        TextView commonTitle;
+        TextView commonDateTime;
+        TextView commonCategory;
+        LinearLayout commonView;
+        //View divderView;
+
+        public DataFive(View v) {
+            super(v);
+            //divderView = (View) v.findViewById(R.id.divderView);
+            commonImage = (ImageView) v.findViewById(R.id.imag_comm);
+            commonTitle = (TextView) v.findViewById(R.id.commonTitle);
+            commonDateTime = (TextView) v.findViewById(R.id.comDateTime);
+            commonCategory = (TextView) v.findViewById(R.id.common_cat);
+            commonView = (LinearLayout) v.findViewById(R.id.commonView);
         }
     }
 }

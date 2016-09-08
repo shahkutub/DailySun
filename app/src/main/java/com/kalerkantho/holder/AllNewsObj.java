@@ -13,6 +13,9 @@ public class AllNewsObj {
     private int code;
     private int status;
     private String msg;
+
+
+
     private List<CommonNewsItem> top_news = new ArrayList<CommonNewsItem>();
     private List<CommonNewsItem> blueslide = new ArrayList<CommonNewsItem>();
     private List<CommonNewsItem> redslider = new ArrayList<CommonNewsItem>();
@@ -21,6 +24,15 @@ public class AllNewsObj {
     private List<CommonNewsItem> latest_news = new ArrayList<CommonNewsItem>();
     private List<CommonNewsItem> most_read = new ArrayList<CommonNewsItem>();
     private List<CommonNewsItem> selected_news = new ArrayList<CommonNewsItem>();
+    private List<CommonNewsItem> feature_faces = new ArrayList<CommonNewsItem>();
+
+    public List<CommonNewsItem> getFeature_faces() {
+        return feature_faces;
+    }
+
+    public void setFeature_faces(List<CommonNewsItem> feature_faces) {
+        this.feature_faces = feature_faces;
+    }
 
     public int getCode() {
         return code;

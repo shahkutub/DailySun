@@ -203,12 +203,12 @@ public class HomeFragment extends Fragment {
                                 titleObj.setCategory_title(getActivity().getResources().getString(R.string.bibid));
                                 allCommonNewsItem.add(titleObj);*/
 
-                                // for bibid row
-                                AllCommonNewsItem hListObj=new AllCommonNewsItem();
-                                hListObj.setNewsCategory("blueslide");
-                                hListObj.setType("horizontal");
-                                hListObj.setList_news_obj(allObj.getBlueslide());
-                                allCommonNewsItem.add(hListObj);
+//                                // for bibid row
+//                                AllCommonNewsItem hListObj=new AllCommonNewsItem();
+//                                hListObj.setNewsCategory("blueslide");
+//                                hListObj.setType("horizontal");
+//                                hListObj.setList_news_obj(allObj.getBlueslide());
+//                                allCommonNewsItem.add(hListObj);
 
                                 // All category object need to add
 
@@ -226,7 +226,7 @@ public class HomeFragment extends Fragment {
                                     {
                                         AllCommonNewsItem a2=new AllCommonNewsItem();
                                         a4.setNewsCategory("allnews");
-                                        a2.setType("defaultscreen");
+                                        a2.setType("defaultscreen1");
                                         a2.setNews_obj(cn);
                                        allCommonNewsItem.add(a2);
                                     }
@@ -243,11 +243,11 @@ public class HomeFragment extends Fragment {
                                 // for bibid row
 
 
-                                AllCommonNewsItem redObj=new AllCommonNewsItem();
-                                redObj.setNewsCategory("bibid");
-                                redObj.setType("horizontal");
-                                redObj.setList_news_obj(allObj.getRedslider());
-                                allCommonNewsItem.add(redObj);
+//                                AllCommonNewsItem redObj=new AllCommonNewsItem();
+//                                redObj.setNewsCategory("bibid");
+//                                redObj.setType("horizontal");
+//                                redObj.setList_news_obj(allObj.getRedslider());
+//                                allCommonNewsItem.add(redObj);
 
 
                                 if (allCommonNewsItem.size() > 0) {
