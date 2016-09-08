@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#F5F5F5"
+    android:background="#303030"
    >
 
 <!--    <TextView
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/setting"
-        android:textColor="#A9A9A9"
+        android:textColor="@color/white"
         android:paddingTop="10dp"
         android:paddingLeft="@dimen/dim70"
         android:paddingRight="@dimen/dim70"
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/helps"
-        android:textColor="#A9A9A9"
+        android:textColor="@color/white"
         android:paddingTop="10dp"
         android:paddingLeft="@dimen/dim70"
         android:paddingBottom="10dp"
@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/feedback"
-        android:textColor="#A9A9A9"
+        android:textColor="@color/white"
         android:paddingTop="10dp"
         android:paddingLeft="@dimen/dim40"
         android:paddingBottom="10dp"

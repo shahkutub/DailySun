@@ -5,21 +5,21 @@
         android:id="@+id/refreshItem"
 
         app:showAsAction="never"
-        android:title="রিফ্রেশ সাইট"></item>
+        android:title="@string/refresh"></item>
     <item
         android:id="@+id/settinItem"
 
         app:showAsAction="never"
-        android:title="সেটিং"></item>
+        android:title="@string/setting"></item>
     <item
         android:id="@+id/helpItem"
 
         app:showAsAction="never"
-        android:title="হেল্প"></item>
+        android:title="@string/helps"></item>
     <item
         android:id="@+id/feedBackItem"
 
         app:showAsAction="never"
-        android:title="ফীডব্যাক পাঠাও"></item>
+        android:title="@string/feedback"></item>
 
 </menu>

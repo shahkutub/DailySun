@@ -64,7 +64,7 @@
 
         <EditText
             android:id="@+id/subjectEditText"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="@string/subject"
@@ -75,7 +75,7 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:singleLine="true"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <View
             android:layout_width="match_parent"
@@ -84,19 +84,19 @@
 
         <EditText
             android:id="@+id/detailsEditText"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@null"
             android:layout_marginLeft="@dimen/dim10"
             android:inputType="textCapSentences"
-            android:hint="Write here.."
+            android:hint="Write Here.."
             android:maxLines="1"
             android:textColorHint="@color/white"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:singleLine="true"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
 
         <View
@@ -117,7 +117,7 @@
         android:paddingLeft="@dimen/dim70"
         android:paddingRight="@dimen/dim70"
         android:paddingTop="@dimen/dim10"
-        android:text="SUBMIT"
+        android:text="Sbmit"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
