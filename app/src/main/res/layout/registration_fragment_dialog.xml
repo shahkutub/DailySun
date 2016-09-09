@@ -59,7 +59,7 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:singleLine="true"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <View
             android:layout_width="fill_parent"
@@ -79,7 +79,7 @@
             android:paddingBottom="10dp"
             android:paddingTop="20dp"
             android:singleLine="true"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
 
         <View
             android:layout_width="fill_parent"
@@ -95,6 +95,7 @@
             android:textColorHint="@color/white"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:textColor="@android:color/white"
             android:layout_marginLeft="@dimen/dim10"
             android:paddingBottom="10dp"
             android:paddingTop="20dp"

@@ -12,8 +12,14 @@
         android:padding="@dimen/dim10"
         android:paddingLeft="@dimen/dim20"
         android:paddingTop="5dp"
+        android:textStyle="bold"
         android:text="@string/name"
         android:textColor="@color/black"
         android:textSize="14sp" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/black" />
 
 </LinearLayout>

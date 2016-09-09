@@ -27,6 +27,7 @@ import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.GridSpacingItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
+import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllCommonNewsItem;
 import com.kalerkantho.holder.AllNewsObj;
 
@@ -35,58 +36,59 @@ import java.util.List;
 import java.util.concurrent.Executors;
 
 public class SelectedNewsFragment extends Fragment {
-   private Context con;
-   private AllNewsObj allObj;
-   private List<AllCommonNewsItem> selectedNews= new ArrayList<AllCommonNewsItem>();
-   private RecyclerView selectedNewRecList;
-   private LinearLayoutManager mLayoutManager;
-   private Drawable dividerDrawable;
-   private LatestRecyAdapter sAdapter;
-   private ProgressBar selectedBg;
+    private Context con;
+    private AllNewsObj allObj;
+    private List<AllCommonNewsItem> latestNews = new ArrayList<AllCommonNewsItem>();
+    private RecyclerView latestNewRecList;
+    private ProgressBar latestNewBg;
+    private Drawable dividerDrawable;
+    private LatestRecyAdapter lAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.selectednews,null);
+        return inflater.inflate(R.layout.latestnews,null);
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         con = getActivity();
-
         intiU();
+
     }
 
     private void intiU() {
 
-
         try {
+
             Gson g = new Gson();
             if (!(TextUtils.isEmpty(PersistData.getStringData(con, AppConstant.HOMERESPONSE)))){
                 allObj = g.fromJson(PersistData.getStringData(con, AppConstant.HOMERESPONSE),AllNewsObj.class);
 
-                selectedNews.clear();
+                latestNews.clear();
 
                 for(CommonNewsItem topNews:allObj.getSelected_news())
                 {
                     AllCommonNewsItem singleObj=new AllCommonNewsItem();
                     singleObj.setType("fullscreen");
                     singleObj.setNews_obj(topNews);
-                    selectedNews.add(singleObj);
+                    latestNews.add(singleObj);
 
                 }
 
-                selectedNewRecList= (RecyclerView) getView().findViewById(R.id.selectedNewRecList);
-                selectedBg = (ProgressBar) getView().findViewById(R.id.selectedBg);
-                selectedNewRecList.setLayoutManager(new GridLayoutManager(con, 2));
-                GridSpacingItemDecoration itemDecoration = new GridSpacingItemDecoration(con, R.dimen.space);
-                selectedNewRecList.addItemDecoration(itemDecoration);
 
-                sAdapter = new LatestRecyAdapter(con,selectedNews,null);
-                selectedNewRecList.setAdapter(sAdapter);
+                latestNewRecList= (RecyclerView) getView().findViewById(R.id.latestNewRecList);
+                latestNewBg = (ProgressBar) getView().findViewById(R.id.latestNewBg);
+                latestNewRecList.setLayoutManager(new LinearLayoutManager(con));
+                RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
+                latestNewRecList.addItemDecoration(dividerItemDecoration);
+
+
+                lAdapter = new LatestRecyAdapter(getActivity(),latestNews,null);
+                latestNewRecList.setAdapter(lAdapter);
             }
-
         }catch (JsonSyntaxException e){
             e.printStackTrace();
         }
@@ -96,6 +98,11 @@ public class SelectedNewsFragment extends Fragment {
 
             requestGetNeslist(AllURL.getHomeNews());
         }
+
+      /* GridSpacingItemDecoration itemDecoration = new GridSpacingItemDecoration(con, R.dimen.space);
+        latestNewRecList.addItemDecoration(itemDecoration);
+        itemDecoration.notifyAll();*/
+
     }
 
     @Override
@@ -121,16 +128,18 @@ public class SelectedNewsFragment extends Fragment {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    //intiU();
-                    sAdapter = new LatestRecyAdapter(con,selectedNews,null);
-                    selectedNewRecList.setAdapter(sAdapter);
+                    //  intiU();
+                    lAdapter = new LatestRecyAdapter(getActivity(),latestNews,null);
+                    latestNewRecList.setAdapter(lAdapter);
                 }
             },100);
+
+
         }
 
         Log.e("URL : ", url);
 
-        selectedBg.setVisibility(View.VISIBLE);
+        latestNewBg.setVisibility(View.VISIBLE);
 
 
         Executors.newSingleThreadScheduledExecutor().submit(new Runnable() {
@@ -150,7 +159,7 @@ public class SelectedNewsFragment extends Fragment {
                     @Override
                     public void run() {
 
-                        selectedBg.setVisibility(View.GONE);
+                        latestNewBg.setVisibility(View.GONE);
 
                         try {
                             Log.e("Response", ">>" + new String(response));
@@ -159,25 +168,24 @@ public class SelectedNewsFragment extends Fragment {
 
                                 allObj=g.fromJson(new String(response),AllNewsObj.class);
                                 AppConstant.REFRESHFLAG = false;
-                                selectedNews.clear();
+                                latestNews.clear();
 
                                 for(CommonNewsItem topNews:allObj.getSelected_news())
                                 {
                                     AllCommonNewsItem singleObj=new AllCommonNewsItem();
                                     singleObj.setType("fullscreen");
                                     singleObj.setNews_obj(topNews);
-                                    selectedNews.add(singleObj);
+                                    latestNews.add(singleObj);
                                 }
-
-                                if (selectedNews.size() > 0) {
-                                    sAdapter = new LatestRecyAdapter(con, selectedNews,null);
-                                    selectedNewRecList.setAdapter(sAdapter);
+                                if (latestNews.size() > 0) {
+                                    lAdapter = new LatestRecyAdapter(getActivity(), latestNews,null);
+                                    latestNewRecList.setAdapter(lAdapter);
                                 }
                             }
 
                         } catch (final Exception e) {
                             e.printStackTrace();
-                            selectedBg.setVisibility(View.GONE);
+                            latestNewBg.setVisibility(View.GONE);
                         }
                     }
                 });

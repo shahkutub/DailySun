@@ -25,6 +25,8 @@ import android.widget.TextView;
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistData;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import com.kalerkantho.Adapter.LatestRecyAdapter;
 import com.kalerkantho.Adapter.MyFvRecyAdapterList;
 import com.kalerkantho.Model.Category;
 import com.kalerkantho.Model.CommonNewsItem;
@@ -36,6 +38,9 @@ import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.DividerItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
+import com.kalerkantho.Utils.VerticalSpaceItem;
+import com.kalerkantho.holder.AllCommonNewsItem;
+import com.kalerkantho.holder.AllNewsObj;
 import com.kalerkantho.holder.AllNirbahito;
 
 import java.util.ArrayList;
@@ -43,40 +48,74 @@ import java.util.List;
 import java.util.concurrent.Executors;
 
 public class NirbaChitoCategoryFragment extends Fragment {
+
     private Context con;
-    private ImageView selectBtniv;
-    private TextView tvLike, tvTitle1, tvTitle2, startBtn;
-    private LinearLayout emptyFv;
-    private MyDBHandler db;
-    private RecyclerView recFvoList;
+    private AllNewsObj allObj;
+    private List<AllCommonNewsItem> latestNews = new ArrayList<AllCommonNewsItem>();
+    private RecyclerView latestNewRecList;
+    private ProgressBar latestNewBg;
+    private Drawable dividerDrawable;
+    private LatestRecyAdapter lAdapter;
 
-    private MyFvRecyAdapterList myAdapter;
-    Drawable dividerDrawable;
-    private LinearLayoutManager myFvLayoutManager;
-
-    private AllNirbahito allnirbahito;
-    private String allCategoryID = "";
-    private int pageNumber = 1, visibleItemCount = 0, totalItemCount, pastVisiblesItems, totalpage;
-
-    FragmentManager mFragmentManager;
-    FragmentTransaction mFragmentTransaction;
-    private List<CommonNewsItem> my_newsListTemp = new ArrayList<CommonNewsItem>();
-    private ProgressBar progressNirbachito;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.nirbachitofragment, null);
+        return inflater.inflate(R.layout.latestnews, null);
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         con = getActivity();
-        db = new MyDBHandler(con);
+        intiU();
 
-        Log.e("allCategvvoryID",">>");
-        initU();
+    }
+
+    private void intiU() {
+
+        try {
+
+            Gson g = new Gson();
+            if (!(TextUtils.isEmpty(PersistData.getStringData(con, AppConstant.HOMERESPONSE)))){
+                allObj = g.fromJson(PersistData.getStringData(con, AppConstant.HOMERESPONSE),AllNewsObj.class);
+
+                latestNews.clear();
+
+                for(CommonNewsItem topNews:allObj.getFeature_faces())
+                {
+                    AllCommonNewsItem singleObj=new AllCommonNewsItem();
+                    singleObj.setType("fullscreen");
+                    singleObj.setNews_obj(topNews);
+                    latestNews.add(singleObj);
+
+                }
+
+
+                latestNewRecList= (RecyclerView) getView().findViewById(R.id.latestNewRecList);
+                latestNewBg = (ProgressBar) getView().findViewById(R.id.latestNewBg);
+                latestNewRecList.setLayoutManager(new LinearLayoutManager(con));
+                RecyclerView.ItemDecoration dividerItemDecoration = new VerticalSpaceItem(Math.round(getResources().getDimension(R.dimen.dim10)));
+                latestNewRecList.addItemDecoration(dividerItemDecoration);
+
+
+                lAdapter = new LatestRecyAdapter(getActivity(),latestNews,null);
+                latestNewRecList.setAdapter(lAdapter);
+            }
+        }catch (JsonSyntaxException e){
+            e.printStackTrace();
+        }
+
+
+        if (AppConstant.REFRESHFLAG){
+
+            requestGetNeslist(AllURL.getHomeNews());
+        }
+
+      /* GridSpacingItemDecoration itemDecoration = new GridSpacingItemDecoration(con, R.dimen.space);
+        latestNewRecList.addItemDecoration(itemDecoration);
+        itemDecoration.notifyAll();*/
 
     }
 
@@ -91,144 +130,32 @@ public class NirbaChitoCategoryFragment extends Fragment {
                 public void run() {
                     PersistData.setIntData(getContext(), AppConstant.FRAGMENTPOSITON,6);
 
-
-                    for (Category category : db.getCatList()) {
-                        allCategoryID += category.getId() + "+";
-                    }
-
-                    if (allCategoryID.length() > 0) {
-                        allCategoryID = allCategoryID.substring(0, allCategoryID.length() - 1);
-                    }
-
-
-                    if (allCategoryID.length() > 0) {
-                        getNirbachitolist(AllURL.getNirbachitoList(allCategoryID, pageNumber));
-                    } else {
-
-                        recFvoList.setVisibility(View.GONE);
-                        emptyFv.setVisibility(View.VISIBLE);
-                    }
-
-
                 }
             },100);
         }
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
 
-
-    }
-
-    private void initU() {
-
-        mFragmentManager = getActivity().getSupportFragmentManager();
-        mFragmentTransaction = mFragmentManager.beginTransaction();
-        progressNirbachito = (ProgressBar) getView().findViewById(R.id.progressNirbachito);
-
-        final Typeface face_reg = Typeface.createFromAsset(con.getAssets(), "fonts/SolaimanLipi_reg.ttf");
-        final Typeface face_bold = Typeface.createFromAsset(con.getAssets(), "fonts/SolaimanLipi_Bold.ttf");
-
-        selectBtniv = (ImageView) getView().findViewById(R.id.selectBtniv);
-        // progressNirbachito = (ProgressBar) getView().findViewById(R.id.progressNirbachito);
-        emptyFv = (LinearLayout) getView().findViewById(R.id.emptyFv);
-        tvLike = (TextView) getView().findViewById(R.id.tvLike);
-        tvTitle1 = (TextView) getView().findViewById(R.id.tvTitle1);
-        tvTitle2 = (TextView) getView().findViewById(R.id.tvTitle2);
-        startBtn = (TextView) getView().findViewById(R.id.startBtn);
-        recFvoList = (RecyclerView) getView().findViewById(R.id.recFvoList);
-
-
-        myFvLayoutManager = new LinearLayoutManager(con);
-        recFvoList.setLayoutManager(myFvLayoutManager);
-
-
-        recFvoList.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                if (dy > 0) //slide_up for scroll down
-                {
-                    visibleItemCount = myFvLayoutManager.getChildCount();
-                    totalItemCount = myFvLayoutManager.getItemCount();
-                    pastVisiblesItems = myFvLayoutManager.findLastVisibleItemPosition();
-                    pageNumber = pageNumber + 1;
-                    if (hasMorePage()) {
-                        if ((pastVisiblesItems) >= totalItemCount - AppConstant.scroolBeforeLatItem) {
-                            getNirbachitolist(AllURL.getNirbachitoList(allCategoryID, pageNumber));
-
-                        }
-                    }
-                }
-            }
-        });
-
-
-        dividerDrawable = ContextCompat.getDrawable(con, R.drawable.divider);
-        RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecoration(dividerDrawable);
-        recFvoList.addItemDecoration(dividerItemDecoration);
-
-        tvLike.setTypeface(face_bold);
-        tvTitle1.setTypeface(face_reg);
-        tvTitle2.setTypeface(face_reg);
-        startBtn.setTypeface(face_reg);
-
-
-        for (Category category : db.getCatList()) {
-            allCategoryID += category.getId() + "+";
-        }
-
-
-        if (allCategoryID.length() > 0) {
-            allCategoryID = allCategoryID.substring(0, allCategoryID.length() - 1);
-        }
-
-        Log.e("allCategoryID",">>"+allCategoryID);
-
-        if (allCategoryID.length() > 0) {
-            getNirbachitolist(AllURL.getNirbachitoList(allCategoryID, pageNumber));
-        } else {
-
-            recFvoList.setVisibility(View.GONE);
-            emptyFv.setVisibility(View.VISIBLE);
-        }
-
-        selectBtniv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TabFragment fragment = new TabFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt("pos", 7);
-                fragment.setArguments(bundle);
-                mFragmentTransaction = mFragmentManager.beginTransaction();
-                mFragmentTransaction.replace(R.id.containerView, fragment).commit();
-
-            }
-        });
-
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TabFragment fragment = new TabFragment();
-                Bundle bundle = new Bundle();
-                bundle.putInt("pos", 7);
-                fragment.setArguments(bundle);
-                mFragmentTransaction = mFragmentManager.beginTransaction();
-                mFragmentTransaction.replace(R.id.containerView, fragment).commit();
-            }
-        });
-
-    }
-
-    private void getNirbachitolist(final String url) {
+    private void requestGetNeslist(final String url) {
         if (!NetInfo.isOnline(con)) {
-            AlertMessage.showMessage(con, getString(R.string.app_name), "No Internet!");
-            return;
+            Handler handler= new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    //  intiU();
+                    lAdapter = new LatestRecyAdapter(getActivity(),latestNews,null);
+                    latestNewRecList.setAdapter(lAdapter);
+                }
+            },100);
+
+
         }
+
         Log.e("URL : ", url);
 
-        progressNirbachito.setVisibility(View.VISIBLE);
+        latestNewBg.setVisibility(View.VISIBLE);
+
+
         Executors.newSingleThreadScheduledExecutor().submit(new Runnable() {
             String response = "";
 
@@ -246,61 +173,37 @@ public class NirbaChitoCategoryFragment extends Fragment {
                     @Override
                     public void run() {
 
-                        progressNirbachito.setVisibility(View.GONE);
+                        latestNewBg.setVisibility(View.GONE);
 
                         try {
                             Log.e("Response", ">>" + new String(response));
                             if (!TextUtils.isEmpty(new String(response))) {
                                 Gson g = new Gson();
-                                allnirbahito = g.fromJson(new String(response), AllNirbahito.class);
 
-                                if (allnirbahito.getStatus().equalsIgnoreCase("1")) {
+                                allObj=g.fromJson(new String(response),AllNewsObj.class);
+                                AppConstant.REFRESHFLAG = false;
+                                latestNews.clear();
 
-                                    my_newsListTemp.addAll(allnirbahito.getMy_news());
-
-                                    if (my_newsListTemp.size() > 0) {
-
-                                        recFvoList.setVisibility(View.VISIBLE);
-                                        emptyFv.setVisibility(View.GONE);
-                                        myAdapter = new MyFvRecyAdapterList(con, my_newsListTemp, null);
-                                        recFvoList.setAdapter(myAdapter);
-                                        myAdapter.notifyDataSetChanged();
-
-                                    } else {
-
-                                        recFvoList.setVisibility(View.GONE);
-                                        emptyFv.setVisibility(View.VISIBLE);
-
-                                    }
+                                for(CommonNewsItem topNews:allObj.getFeature_faces())
+                                {
+                                    AllCommonNewsItem singleObj=new AllCommonNewsItem();
+                                    singleObj.setType("fullscreen");
+                                    singleObj.setNews_obj(topNews);
+                                    latestNews.add(singleObj);
+                                }
+                                if (latestNews.size() > 0) {
+                                    lAdapter = new LatestRecyAdapter(getActivity(), latestNews,null);
+                                    latestNewRecList.setAdapter(lAdapter);
                                 }
                             }
 
                         } catch (final Exception e) {
                             e.printStackTrace();
-                            progressNirbachito.setVisibility(View.GONE);
+                            latestNewBg.setVisibility(View.GONE);
                         }
                     }
                 });
             }
         });
-    }
-
-    private boolean hasMorePage() {
-        if (allnirbahito.getPaginator() != null) {
-            if (TextUtils.isDigitsOnly("" + allnirbahito.getPaginator().getPageCount())) {
-                totalpage = allnirbahito.getPaginator().getPageCount();
-            } else {
-                totalpage = 1;
-            }
-            int currentPageCount = Integer.parseInt(allnirbahito.getPaginator().getPage());
-
-            if (currentPageCount < totalpage) {
-                return true;
-            }
-        } else {
-            return false;
-        }
-
-        return false;
     }
 }

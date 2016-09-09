@@ -85,7 +85,7 @@ public class LatestNewsFragment extends Fragment {
                 latestNewRecList.addItemDecoration(dividerItemDecoration);
 
 
-                lAdapter = new LatestRecyAdapter(con,latestNews,null);
+                lAdapter = new LatestRecyAdapter(getActivity(),latestNews,null);
                 latestNewRecList.setAdapter(lAdapter);
             }
         }catch (JsonSyntaxException e){
@@ -128,7 +128,7 @@ public class LatestNewsFragment extends Fragment {
                 @Override
                 public void run() {
                   //  intiU();
-                    lAdapter = new LatestRecyAdapter(con,latestNews,null);
+                    lAdapter = new LatestRecyAdapter(getActivity(),latestNews,null);
                     latestNewRecList.setAdapter(lAdapter);
                 }
             },100);
@@ -177,7 +177,7 @@ public class LatestNewsFragment extends Fragment {
                                     latestNews.add(singleObj);
                                 }
                                 if (latestNews.size() > 0) {
-                                    lAdapter = new LatestRecyAdapter(con, latestNews,null);
+                                    lAdapter = new LatestRecyAdapter(getActivity(), latestNews,null);
                                     latestNewRecList.setAdapter(lAdapter);
                                 }
                             }

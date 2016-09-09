@@ -5,22 +5,12 @@
     android:background="@color/black"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/nirbachitoSongbad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:paddingTop="8dp"
-        android:paddingLeft="30dp"
-        android:paddingBottom="8dp"
-        android:text="নির্বাচিত সংবাদ"
-        android:textSize="18sp"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#808080"
         ></View>
-
 <RelativeLayout
     android:id="@+id/shokolBtn"
     android:layout_width="match_parent"
@@ -32,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="সকল সংবাদ"
+        android:text="All News"
         android:paddingLeft="30dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
@@ -48,10 +38,6 @@
         android:src="@drawable/back_gone"/>
 </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#808080"
-        ></View>
+
 
 </LinearLayout>

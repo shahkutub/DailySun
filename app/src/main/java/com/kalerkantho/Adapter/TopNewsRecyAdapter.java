@@ -1,10 +1,13 @@
 package com.kalerkantho.Adapter;
 
+import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,18 +18,20 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.kalerkantho.DetailsActivity;
 import com.dailysun.R;
+import com.kalerkantho.Dialog.CatListDialogFragment;
+import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.holder.AllCommonNewsItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TopNewsRecyAdapter extends RecyclerView.Adapter<TopNewsRecyAdapter.MyViewHolder> {
-    Context context;
+    Activity context;
     List<AllCommonNewsItem> topnews = new ArrayList<AllCommonNewsItem>();
     public static final int dataOne = 1;
     public static final int dataTwo = 2;
 
-    public TopNewsRecyAdapter(Context context, List<AllCommonNewsItem> topnews) {
+    public TopNewsRecyAdapter(Activity context, List<AllCommonNewsItem> topnews) {
         this.context = context;
         this.topnews = topnews;
 
@@ -115,6 +120,18 @@ public class TopNewsRecyAdapter extends RecyclerView.Adapter<TopNewsRecyAdapter.
                 }
             });
 
+            firstHolder.categoryTitle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppConstant.CATEGORYTYPE = newsitem.getNews_obj().getCategory();
+                    AppConstant.CATEGORYTITLE= newsitem.getNews_obj().getCategory_name();
+                    Log.e("Category Type",""+ AppConstant.CATEGORYTYPE );
+                    CatListDialogFragment dialogCatList= new CatListDialogFragment();
+                    dialogCatList.setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar);
+                    dialogCatList.show(context.getFragmentManager(), "");
+                }
+            });
+
             firstHolder.titleFullScreen.setTypeface(face_bold);
             firstHolder.datetiemFullScreen.setTypeface(face_reg);
             firstHolder.categoryTitle.setTypeface(face_reg);
@@ -142,6 +159,12 @@ public class TopNewsRecyAdapter extends RecyclerView.Adapter<TopNewsRecyAdapter.
                 commonHolder.commonDateTime.setText("");
             }
 
+            if (!TextUtils.isEmpty(newsitem.getNews_obj().getSummery())){
+                commonHolder.summeryNews.setText(newsitem.getNews_obj().getSummery());
+            }else{
+                commonHolder.summeryNews.setText("");
+            }
+
             if (!TextUtils.isEmpty(newsitem.getNews_obj().getCategory_name())){
                 commonHolder.commonCategory.setText(newsitem.getNews_obj().getCategory_name());
             }else{
@@ -159,6 +182,18 @@ public class TopNewsRecyAdapter extends RecyclerView.Adapter<TopNewsRecyAdapter.
                     i.putExtra("is_favrt","0");
                     context.startActivity(i);
 
+                }
+            });
+
+            commonHolder.commonCategory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppConstant.CATEGORYTYPE = newsitem.getNews_obj().getCategory();
+                    AppConstant.CATEGORYTITLE= newsitem.getNews_obj().getCategory_name();
+                    Log.e("Category Type",""+ AppConstant.CATEGORYTYPE );
+                    CatListDialogFragment dialogCatList= new CatListDialogFragment();
+                    dialogCatList.setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar);
+                    dialogCatList.show(context.getFragmentManager(), "");
                 }
             });
 
@@ -214,7 +249,9 @@ public class TopNewsRecyAdapter extends RecyclerView.Adapter<TopNewsRecyAdapter.
         TextView commonTitle;
         TextView commonDateTime;
         TextView commonCategory;
+        TextView summeryNews;
         LinearLayout commonView;
+
         View divderView;
         public DataTwo(View v) {
             super(v);
@@ -223,6 +260,7 @@ public class TopNewsRecyAdapter extends RecyclerView.Adapter<TopNewsRecyAdapter.
             commonTitle = (TextView) v.findViewById(R.id.commonTitle);
             commonDateTime = (TextView) v.findViewById(R.id.comDateTime);
             commonCategory = (TextView) v.findViewById(R.id.common_cat);
+            summeryNews= (TextView) v.findViewById(R.id.summeryNews);
             commonView = (LinearLayout) v.findViewById(R.id.commonView);
         }
 

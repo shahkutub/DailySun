@@ -67,7 +67,7 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/commonTit"
+                    android:id="@+id/summeryNews"
                     android:layout_width="match_parent"
                     android:layout_below="@+id/commonTitle"
                     android:layout_height="wrap_content"

@@ -35,7 +35,7 @@
         android:paddingTop="8dp"
         android:paddingLeft="30dp"
         android:paddingBottom="8dp"
-        android:text="ফটো গ্যালারি"
+        android:text="@string/photoGallery"
         android:textSize="18sp"/>
     <View
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
         android:paddingTop="8dp"
         android:paddingLeft="30dp"
         android:paddingBottom="8dp"
-        android:text="মতামত"
+        android:text="@string/feebacktext"
         android:textSize="18sp"/>
 
 </LinearLayout>

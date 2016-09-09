@@ -104,6 +104,17 @@
                         android:visibility="gone" />
 
                     <include
+                        layout="@layout/head_section3"
+                        android:visibility="visible" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/nirbachitoList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#2C2C2C"
+                        android:visibility="gone" />
+
+                    <include
                         layout="@layout/head_section2"
                         android:visibility="visible" />
 
@@ -114,16 +125,7 @@
                         android:background="#2C2C2C"
                         android:visibility="gone" />
 
-                    <include
-                        layout="@layout/head_section3"
-                        android:visibility="visible" />
 
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/nirbachitoList"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#2C2C2C"
-                        android:visibility="gone" />
 
                     <include
                         layout="@layout/head_section4"

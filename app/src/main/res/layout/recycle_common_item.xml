@@ -7,8 +7,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_marginLeft="@dimen/dim10"
-        android:layout_marginRight="@dimen/dim10"
+
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:elevation="1px">
@@ -57,11 +56,11 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/commonTitl"
+                    android:id="@+id/summeryNews"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/commonTitle"
-                    android:text="Titel"
+                    android:text=""
                     android:lines="1"
                     android:maxLines="1"
                     android:layout_marginLeft="@dimen/dim10"

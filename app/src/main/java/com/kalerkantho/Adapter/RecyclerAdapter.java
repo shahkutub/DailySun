@@ -195,6 +195,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 commonHolder.commonTitle.setText("");
             }
 
+            if (!TextUtils.isEmpty(newsitem.getNews_obj().getSummery())) {
+                commonHolder.summeryNews.setText(newsitem.getNews_obj().getSummery());
+
+            } else {
+                commonHolder.summeryNews.setText("");
+            }
+
             if (!TextUtils.isEmpty(newsitem.getNews_obj().getBanglaDateString())){
                 commonHolder.commonDateTime.setText(newsitem.getNews_obj().getBanglaDateString());
             }else{
@@ -305,8 +312,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
                 commonHolder.commonDateTime.setText("");
             }
 
-            if (!TextUtils.isEmpty(newsitem.getNews_obj().getCategory_name())){
-                commonHolder.commonCategory.setText(newsitem.getNews_obj().getCategory_name());
+            if (!TextUtils.isEmpty(newsitem.getCategory_title())){
+                commonHolder.commonCategory.setText(newsitem.getCategory_title());
             }else{
                 commonHolder.commonCategory.setText("");
                // commonHolder.divderView.setVisibility(View.GONE);
@@ -316,8 +323,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
             commonHolder.commonCategory.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AppConstant.CATEGORYTYPE = newsitem.getNews_obj().getCategory();
-                    AppConstant.CATEGORYTITLE= newsitem.getNews_obj().getCategory_name();
+                    AppConstant.CATEGORYTYPE = newsitem.getCategory_id();
+                    AppConstant.CATEGORYTITLE= newsitem.getCategory_title();
                     Log.e("Category Type",""+ AppConstant.CATEGORYTYPE );
                     CatListDialogFragment dialogCatList= new CatListDialogFragment();
                     dialogCatList.setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar);
@@ -393,6 +400,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
         ImageView commonImage;
         TextView commonTitle;
         TextView commonDateTime;
+        TextView summeryNews;
         TextView commonCategory;
         LinearLayout commonView;
         //View divderView;
@@ -404,6 +412,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Custom
             commonTitle = (TextView) v.findViewById(R.id.commonTitle);
             commonDateTime = (TextView) v.findViewById(R.id.comDateTime);
             commonCategory = (TextView) v.findViewById(R.id.common_cat);
+            summeryNews= (TextView) v.findViewById(R.id.summeryNews);
             commonView = (LinearLayout) v.findViewById(R.id.commonView);
         }
     }
