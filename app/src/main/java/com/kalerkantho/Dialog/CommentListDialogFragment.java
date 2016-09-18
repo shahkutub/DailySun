@@ -115,9 +115,9 @@ public class CommentListDialogFragment extends DialogFragment {
             }
         });
 
-        Drawable dividerDrawable = ContextCompat.getDrawable(con, R.drawable.divider);
-        RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecoration(dividerDrawable);
-        rvCommentList.addItemDecoration(dividerItemDecoration);
+        //Drawable dividerDrawable = ContextCompat.getDrawable(con, R.drawable.divider);
+        //RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecoration(dividerDrawable);
+       // rvCommentList.addItemDecoration(dividerItemDecoration);
 
         // catHeadText.setText(getString(R.string.catlist));
 
@@ -176,6 +176,25 @@ public class CommentListDialogFragment extends DialogFragment {
                                 my_newsListTemp.addAll(allCatList.getComments());
                                 Log.e("Commentsize", ">>" + my_newsListTemp.size());
                                 if (allCatList.getStatus().equalsIgnoreCase("1")) {
+
+
+//                                    CommentInfo c1=new CommentInfo();
+//                                    c1.setComment_text("Test ccc");
+//                                    c1.setConnent_id("1");
+//                                    c1.setCreated_at("2016-09-09 00:00:00");
+//                                    c1.setEmail("abc@gmail.com");
+//                                    c1.setFull_name("Babul ccc");
+//
+//                                    my_newsListTemp.add(c1);
+//                                    my_newsListTemp.add(c1);
+//                                    my_newsListTemp.add(c1);
+//                                    my_newsListTemp.add(c1);
+//                                    my_newsListTemp.add(c1);
+//                                    my_newsListTemp.add(c1);
+//                                    my_newsListTemp.add(c1);
+
+
+
 
                                     catAdapter = new CommentListAdapter(con, my_newsListTemp, null);
                                     rvCommentList.setAdapter(catAdapter);

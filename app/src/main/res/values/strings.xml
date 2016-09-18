@@ -11,12 +11,16 @@
     <string name="top_news">Top News</string>
     <string name="most_views_news">All News</string>
     <string name="first_page">First Page</string>
-    <string name="popular_stories">Popular Stories</string>
+    <string name="popular_stories">Most Read</string>
+    <string name="selected_news">Selected News</string>
+    <string name="feature_faces">Feature &amp; Faces</string>
+    <string name="photoGallery">Photo Gallery</string>
+    <string name="feebacktext">Feedback</string>
     <string name="print_version">Print Version</string>
     <string name="last_page">Last Page</string>
     <string name="special_news">Special News</string>
     <string name="others_news">Feature News</string>
-    <string name="bibid"> বিবিধ </string>
+    <string name="bibid">Others</string>
     <string name="aro">More</string>
     <string name="month1">জানুয়ারী</string>
     <string name="month2">ফেব্রুয়ারি</string>
@@ -78,15 +82,15 @@
     <string name="motamotyour">Write your opinion</string>
     <string name="your_comment">Your Comment</string>
     <string name="subject">Subject</string>
-    <string name="detailss">বিস্তারিত লিখুন</string>
+    <string name="detailss">Write details</string>
     <string name="motamot">Opinion</string>
     <string name="comment">Comment</string>
-    <string name="comment_please">মন্তব্য করুন </string>
+    <string name="comment_please">Comment</string>
     <string name="write_comment">Write Here...</string>
-    <string name="write_comment_pleas">দয়াকরে মন্তব্য লিখুন</string>
-    <string name="comment_succes">আপনার মূল্যবান মন্তব্যের জন্য ধন্যবাদ !!!</string>
+    <string name="write_comment_pleas">Comment field is empty!</string>
+    <string name="comment_succes">Thanks for your comment!</string>
     <string name="thanks">Thank you for your valuable opinion!!!</string>
-    <string name="catlist">ক্যাটাগরি তালিকা</string>
+    <string name="catlist">Category List</string>
 
 
 

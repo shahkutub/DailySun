@@ -1,9 +1,12 @@
 package com.kalerkantho.Adapter;
+import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.kalerkantho.DetailsActivity;
+import com.kalerkantho.Dialog.CatListDialogFragment;
 import com.kalerkantho.Model.OnItemClickListenerNews;
 import com.dailysun.R;
 import com.kalerkantho.Utils.AppConstant;
@@ -21,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MostReadRecyAdapter extends RecyclerView.Adapter<MostReadRecyAdapter.MyViewHolder> {
-    Context context;
+    Activity context;
     private final OnItemClickListenerNews listener;
     private List<AllCommonNewsItem> latestList = new ArrayList<AllCommonNewsItem>();
     private  AllCommonNewsItem allNewsItem ;
@@ -32,6 +36,8 @@ public class MostReadRecyAdapter extends RecyclerView.Adapter<MostReadRecyAdapte
         TextView commonDateTime;
         TextView commonCategory;
         TextView numberingText;
+        TextView summeryNews;
+
 
 
 
@@ -44,6 +50,7 @@ public class MostReadRecyAdapter extends RecyclerView.Adapter<MostReadRecyAdapte
             commonDateTime = (TextView) view.findViewById(R.id.comDateTime);
             commonCategory = (TextView) view.findViewById(R.id.common_cat);
             numberingText = (TextView) view.findViewById(R.id.numberingText);
+            summeryNews = (TextView) view.findViewById(R.id.summeryNews);
 
         }
 
@@ -63,6 +70,13 @@ public class MostReadRecyAdapter extends RecyclerView.Adapter<MostReadRecyAdapte
 
             } else {
                 commonTitle.setText("");
+            }
+
+            if (!TextUtils.isEmpty(item.getNews_obj().getSummery())) {
+                summeryNews.setText(item.getNews_obj().getSummery());
+
+            } else {
+                summeryNews.setText("");
             }
 
             if (!TextUtils.isEmpty(item.getNews_obj().getBanglaDateString())){
@@ -89,10 +103,22 @@ public class MostReadRecyAdapter extends RecyclerView.Adapter<MostReadRecyAdapte
             commonCategory.setTypeface(face_reg);
             numberingText.setTypeface(face_bold);
 
+            commonCategory.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppConstant.CATEGORYTYPE = item.getNews_obj().getCategory();
+                    AppConstant.CATEGORYTITLE= item.getNews_obj().getCategory_name();
+                    Log.e("Category Type",""+ AppConstant.CATEGORYTYPE );
+                    CatListDialogFragment dialogCatList= new CatListDialogFragment();
+                    dialogCatList.setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar);
+                    dialogCatList.show(context.getFragmentManager(), "");
+                }
+            });
+
 
         }
     }
-    public MostReadRecyAdapter(Context context, List<AllCommonNewsItem> latestList, OnItemClickListenerNews listener) {
+    public MostReadRecyAdapter(Activity context, List<AllCommonNewsItem> latestList, OnItemClickListenerNews listener) {
         this.context = context;
         this.listener = listener;
         this.latestList = latestList;

@@ -70,6 +70,22 @@
         android:layout_height="0.5dp"
         android:background="#808080" />
 
+    <TextView
+        android:id="@+id/nirbachitoSongbad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:paddingTop="8dp"
+        android:paddingLeft="30dp"
+        android:paddingBottom="8dp"
+        android:text="@string/selected_news"
+        android:textSize="18sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080"
+        ></View>
+
     <RelativeLayout
         android:id="@+id/printBtn"
         android:layout_width="match_parent"

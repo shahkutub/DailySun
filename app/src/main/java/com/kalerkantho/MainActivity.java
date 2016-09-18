@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         showPrintListView = (ImageView) findViewById(R.id.showPrintListView);
         shokolShonbadListView = (ImageView) findViewById(R.id.shokolShonbadListView);
         nirbacitoMenuView = (ImageView) findViewById(R.id.nirbacitoMenuView);
+        nirbacitoMenuView.setVisibility(View.GONE);
         tvDate = (TextView) findViewById(R.id.tvDate);
         homeMenu = (TextView) findViewById(R.id.homeMenu);
         shirshoMenu = (TextView) findViewById(R.id.shirshoMenu);
@@ -253,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+// tope news
         shirshoMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -270,7 +271,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+// latest news
         shorboMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -286,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+//most read
         shorbaMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -301,6 +302,8 @@ public class MainActivity extends AppCompatActivity {
                 mDrawerLayout.closeDrawers();
             }
         });
+
+        // print version
 
         printBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -348,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+// selected news
         nirbachitoSongbad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -412,7 +415,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+// feature and feaces
         nirbachitoCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1089,7 +1092,7 @@ public class MainActivity extends AppCompatActivity {
                         }).playOn(mainDialog);*/
 
 
-                //return true;
+                return true;
 
             case R.id.settinItem:
                 SettingFragment fragment = new SettingFragment();

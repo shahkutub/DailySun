@@ -96,7 +96,7 @@ public class MagazineListFragment extends Fragment {
                 @Override
                 public void run() {
 
-                    PersistData.setIntData(getContext(), AppConstant.FRAGMENTPOSITON,8);
+                    PersistData.setIntData(getContext(), AppConstant.FRAGMENTPOSITON,7);
                 }
             },100);
         }

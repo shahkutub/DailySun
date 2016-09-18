@@ -139,78 +139,11 @@ public class CommonNewsItem {
                 e.printStackTrace();
             }
 
-            SimpleDateFormat dayFromate = new SimpleDateFormat("dd");
-            SimpleDateFormat monthFromate = new SimpleDateFormat("MM");
-            SimpleDateFormat yearFromate = new SimpleDateFormat("yyyy");
-
-            SimpleDateFormat hourFromate = new SimpleDateFormat("hh");
-            SimpleDateFormat minuteFromate = new SimpleDateFormat("mm");
-
-            String dayForm = dayFromate.format(ddd);
-            String monthForm = monthFromate.format(ddd);
-            String yearForm = yearFromate.format(ddd);
-            String hourForm = hourFromate.format(ddd);
-            String minuteForm = minuteFromate.format(ddd);
-            String monthName="";
-
-            if(monthForm.equalsIgnoreCase("01") ){
-
-                monthName = AppConstant.allMonth[0];
-
-            }else if(monthForm.equalsIgnoreCase("02")){
-
-                monthName = AppConstant.allMonth[1];
-
-            }else if(monthForm.equalsIgnoreCase("03")){
-
-                monthName = AppConstant.allMonth[2];
-
-            }else if(monthForm.equalsIgnoreCase("04")){
-
-                monthName = AppConstant.allMonth[3];
-
-            }else if(monthForm.equalsIgnoreCase("05")){
-
-                monthName = AppConstant.allMonth[4];
-
-            }else if(monthForm.equalsIgnoreCase("06")){
-
-                monthName = AppConstant.allMonth[5];
-
-            }else if(monthForm.equalsIgnoreCase("07")){
-
-                monthName = AppConstant.allMonth[6];
-
-            }else if(monthForm.equalsIgnoreCase("08")){
-
-                monthName = AppConstant.allMonth[7];
-
-            }else if(monthForm.equalsIgnoreCase("09")){
-
-                monthName = AppConstant.allMonth[8];
-
-            }else if(monthForm.equalsIgnoreCase("10")){
-
-                monthName = AppConstant.allMonth[9];
-
-            }else if(monthForm.equalsIgnoreCase("11")){
-
-                monthName = AppConstant.allMonth[10];
-
-            }else if(monthForm.equalsIgnoreCase("12")){
-
-                monthName = AppConstant.allMonth[11];
-
-            }
+            SimpleDateFormat fullDate = new SimpleDateFormat("dd MMM, yyyy hh:mm");
 
 
+            banglaDate=fullDate.format(ddd);
 
-            String day2Bangla = AppConstant.getDigitBanglaFromEnglish(String.valueOf(dayForm));
-            String year2Bangla = AppConstant.getDigitBanglaFromEnglish(String.valueOf(yearForm));
-            String hour2Bangla = AppConstant.getDigitBanglaFromEnglish(String.valueOf(hourForm));
-            String minute2Bangla = AppConstant.getDigitBanglaFromEnglish(String.valueOf(minuteForm));
-
-            banglaDate= day2Bangla+" "+monthName+", "+year2Bangla+" "+hour2Bangla+"."+minute2Bangla;
 
         }
 

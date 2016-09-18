@@ -99,7 +99,7 @@ public class TopNewsFragment extends Fragment {
                 topnewRecList.addItemDecoration(dividerItemDecoration);
 
 
-                tAdapter = new TopNewsRecyAdapter(con,topnews);
+                tAdapter = new TopNewsRecyAdapter(getActivity(),topnews);
                 topnewRecList.setAdapter(tAdapter);
 
             }
@@ -139,7 +139,7 @@ public class TopNewsFragment extends Fragment {
                 @Override
                 public void run() {
                     //intiU();
-                    tAdapter = new TopNewsRecyAdapter(con,topnews);
+                    tAdapter = new TopNewsRecyAdapter(getActivity(),topnews);
                     topnewRecList.setAdapter(tAdapter);
                 }
             },100);

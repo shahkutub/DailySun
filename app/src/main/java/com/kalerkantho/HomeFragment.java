@@ -223,7 +223,10 @@ public class HomeFragment extends Fragment {
                                     for(CommonNewsItem cn:allCat.getNews())
                                     {
                                         AllCommonNewsItem a2=new AllCommonNewsItem();
-                                        a4.setNewsCategory("allnews");
+                                        //a2.setNewsCategory("allnews");
+                                        a2.setCategory_title(allCat.getCategory_name());
+                                        a2.setCategory_id(allCat.getCategory_id());
+
                                         a2.setType("default_full_screen");
                                         a2.setNews_obj(cn);
                                        allCommonNewsItem.add(a2);

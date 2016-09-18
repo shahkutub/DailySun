@@ -43,7 +43,7 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView tvNameCom,tvCommentDetails,tvDateCom;
+        TextView tvNameCom,tvCommentDetails,tvDateCom,firstCharacter;
 
         View divderView;
 
@@ -55,6 +55,7 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
             tvCommentDetails = (TextView) view.findViewById(R.id.tvCommentDetails);
             tvNameCom = (TextView) view.findViewById(R.id.tvNameCom);
             tvDateCom = (TextView) view.findViewById(R.id.tvDateCom);
+            firstCharacter = (TextView) view.findViewById(R.id.firstCharacter);
         }
 
         public void bind(final CommentInfo item, final OnItemClickListenerNews listener) {
@@ -65,6 +66,7 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
             tvCommentDetails.setTypeface(face_reg);
             tvNameCom.setTypeface(face_reg);
             tvDateCom.setTypeface(face_reg);
+            firstCharacter.setTypeface(face_reg);
 
             if (!TextUtils.isEmpty(item.getFull_name())) {
                 tvNameCom.setText(item.getFull_name());
@@ -78,6 +80,8 @@ public class CommentListAdapter extends RecyclerView.Adapter<CommentListAdapter.
             }else{
                 tvCommentDetails.setText("");
             }
+
+            firstCharacter.setText(item.getFirstCharacter());
 
             if (!TextUtils.isEmpty(item.getBanglaDateString())){
                 tvDateCom.setText(item.getBanglaDateString());

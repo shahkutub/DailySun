@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.dailysun.R;
 import com.kalerkantho.Fragment.AllnewsFragment;
 import com.kalerkantho.Fragment.LatestNewsFragment;
+import com.kalerkantho.Fragment.MagazineListFragment;
 import com.kalerkantho.Fragment.MostReadFragment;
 import com.kalerkantho.Fragment.NirbaChitoCategoryFragment;
 import com.kalerkantho.Fragment.PrintVFragment;
@@ -109,6 +110,8 @@ public class TabFragment extends Fragment {
     void setPageItem(int i)
     {
         viewPager.setCurrentItem(i);
+        tabLayout.setupWithViewPager(viewPager);
+
     }
 
 
@@ -166,7 +169,7 @@ public class TabFragment extends Fragment {
 
               case 7 :
 
-                  return new SubjectLikeFragment();
+                  return new MagazineListFragment();
 
                 case 8 :
 

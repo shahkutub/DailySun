@@ -38,7 +38,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_alignBottom="@+id/imag_comm"
-                android:layout_height="@dimen/dim40"
+                android:layout_height="@dimen/dim50"
                 android:background="@drawable/view_bg"
                 android:paddingLeft="@dimen/dim10"
                 android:paddingRight="@dimen/dim10"
@@ -48,14 +48,15 @@
                     android:id="@+id/commonTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Titel"
+                    android:text=""
                     android:maxLines="2"
+
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:background="@android:color/transparent"
                     android:textStyle="bold" />
                 <RelativeLayout
-                    android:layout_marginLeft="@dimen/dim10"
+
                     android:layout_width="match_parent"
                     android:layout_marginBottom="5dp"
                     android:layout_alignParentBottom="true"
@@ -65,7 +66,8 @@
                         android:id="@+id/common_cat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cayegory"
+                        android:text=""
+                        android:textStyle="bold"
                         android:textColor="@color/orange"
                         android:textSize="12sp" />
                     <TextView
@@ -74,7 +76,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dim20"
                         android:gravity="end"
-                        android:text="Date"
+                        android:text=""
+                        android:textStyle="bold"
                         android:layout_toRightOf="@+id/common_cat"
                         android:textColor="@color/orange"
                         android:textSize="12sp" />

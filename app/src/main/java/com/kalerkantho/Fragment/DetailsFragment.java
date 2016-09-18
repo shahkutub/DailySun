@@ -135,6 +135,7 @@ public class DetailsFragment extends Fragment {
 
         if (db.isFavorite(content_id)) {
             favImage.setImageResource(R.drawable.fav_white_fill);
+            progressShow.setVisibility(View.INVISIBLE);
         } else {
             favImage.setImageResource(R.drawable.fav_white);
         }
