@@ -297,6 +297,7 @@ public class DetailsFragment extends Fragment {
                 if(ContextCompat.checkSelfPermission(con, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
                     ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
                 }else{
+                    
                     Picasso.with(con).load(allDetail.getNews().getImage()).memoryPolicy(MemoryPolicy.NO_CACHE).into(target);
                 }
 
