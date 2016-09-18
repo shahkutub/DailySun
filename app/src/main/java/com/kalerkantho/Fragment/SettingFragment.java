@@ -20,7 +20,7 @@ import android.widget.ToggleButton;
 
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistData;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.kalerkantho.Dialog.ConditionDialogFragment;
 import com.kalerkantho.Dialog.HelpDialogFragment;
@@ -33,8 +33,6 @@ import com.kalerkantho.Utils.PersistentUser;
 import com.kalerkantho.holder.AllCommonResponse;
 
 import java.util.concurrent.Executors;
-
-;
 
 
 public class SettingFragment extends Fragment {

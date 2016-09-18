@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.kalerkantho.Adapter.TopNewsRecyAdapter;
 import com.kalerkantho.Model.CommonNewsItem;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.DividerItemDecoration;

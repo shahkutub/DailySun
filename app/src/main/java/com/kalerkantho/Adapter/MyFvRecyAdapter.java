@@ -7,17 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.dailysun.app.R;
 import com.kalerkantho.Model.Category;
 import com.kalerkantho.Model.OnItemClickListener;
 import com.kalerkantho.MyDb.MyDBHandler;
-import com.dailysun.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MyFvRecyAdapter extends RecyclerView.Adapter<MyFvRecyAdapter.MyViewHolder> {
     Context context;

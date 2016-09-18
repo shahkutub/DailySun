@@ -3,10 +3,8 @@ package com.kalerkantho.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -20,15 +18,14 @@ import android.widget.TextView;
 
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistentUser;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.kalerkantho.Adapter.CommentListAdapter;
 import com.kalerkantho.Model.CommentInfo;
 import com.kalerkantho.Model.CommentListResponse;
-import com.dailysun.R;
 import com.kalerkantho.Utils.AlertMessage;
 import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
-import com.kalerkantho.Utils.DividerItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
 
 import java.util.ArrayList;

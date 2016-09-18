@@ -5,7 +5,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,12 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.kalerkantho.Adapter.FavrtRecycleAdapter;
 import com.kalerkantho.Model.DetailsModel;
 import com.kalerkantho.Model.FvrtModel;
 import com.kalerkantho.MyDb.MyDBHandler;
-import com.dailysun.R;
 import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllNewsObj;
 

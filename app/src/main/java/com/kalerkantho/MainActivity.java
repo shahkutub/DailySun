@@ -34,7 +34,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aapbd.utils.storage.PersistData;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -1135,7 +1135,7 @@ public class MainActivity extends AppCompatActivity {
                 // Otherwise, set the URL to null.
                 Uri.parse("http://host/path"),
                 // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.dailysun/http/host/path")
+                Uri.parse("android-app://com.dailysun.app/http/host/path")
         );
         AppIndex.AppIndexApi.start(client2, viewAction);
     }
@@ -1154,7 +1154,7 @@ public class MainActivity extends AppCompatActivity {
                 // Otherwise, set the URL to null.
                 Uri.parse("http://host/path"),
                 // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.dailysun/http/host/path")
+                Uri.parse("android-app://com.dailysun.app/http/host/path")
         );
         AppIndex.AppIndexApi.end(client2, viewAction);
         client2.disconnect();

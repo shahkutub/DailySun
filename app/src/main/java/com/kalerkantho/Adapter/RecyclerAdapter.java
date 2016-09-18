@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.kalerkantho.DetailsActivity;
 import com.kalerkantho.Dialog.CatListDialogFragment;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.holder.AllCommonNewsItem;
 

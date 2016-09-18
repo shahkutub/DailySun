@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.dailysun"
+        applicationId "com.dailysun.app"
         // Enabling multidex support.
         multiDexEnabled true
         minSdkVersion 14

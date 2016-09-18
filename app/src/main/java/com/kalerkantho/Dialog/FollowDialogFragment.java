@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.Utils.AppConstant;
 
 public class FollowDialogFragment extends DialogFragment {

@@ -1,8 +1,10 @@
 package com.kalerkantho.Fragment;
 
+import android.Manifest;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -11,9 +13,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,10 +28,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistentUser;
 import com.bumptech.glide.Glide;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.kalerkantho.Dialog.CatListDialogFragment;
@@ -38,7 +44,6 @@ import com.kalerkantho.Dialog.MotamotDialogFragment;
 import com.kalerkantho.Model.DetailsModel;
 import com.kalerkantho.Model.FvrtModel;
 import com.kalerkantho.MyDb.MyDBHandler;
-import com.dailysun.R;
 import com.kalerkantho.Utils.AlertMessage;
 import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
@@ -289,8 +294,11 @@ public class DetailsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Picasso.with(con).load(allDetail.getNews().getImage()).memoryPolicy(MemoryPolicy.NO_CACHE).into(target);
-
+                if(ContextCompat.checkSelfPermission(con, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                }else{
+                    Picasso.with(con).load(allDetail.getNews().getImage()).memoryPolicy(MemoryPolicy.NO_CACHE).into(target);
+                }
 
             }
         });
@@ -299,8 +307,11 @@ public class DetailsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Picasso.with(con).load(allDetail.getNews().getImage()).memoryPolicy(MemoryPolicy.NO_CACHE).into(target);
-
+                if(ContextCompat.checkSelfPermission(con, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                }else{
+                    Picasso.with(con).load(allDetail.getNews().getImage()).memoryPolicy(MemoryPolicy.NO_CACHE).into(target);
+                }
 
             }
         });
@@ -707,5 +718,22 @@ public class DetailsFragment extends Fragment {
     };
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
 
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Picasso.with(con).load(allDetail.getNews().getImage()).memoryPolicy(MemoryPolicy.NO_CACHE).into(target);
+
+                } else {
+
+                    Toast.makeText(con, "Permission denied, so you can't share", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+
+        }
+    }
 }

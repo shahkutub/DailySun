@@ -19,7 +19,7 @@ import com.kalerkantho.Model.DetailsModel;
 import com.kalerkantho.Model.FvrtModel;
 import com.kalerkantho.Model.OnItemClickListenerNews;
 import com.kalerkantho.MyDb.MyDBHandler;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.holder.AllPhoto;
 
 import java.util.ArrayList;

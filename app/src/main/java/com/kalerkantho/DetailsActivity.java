@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.kalerkantho.Fragment.CommunicatorFragmentInterface;
 import com.kalerkantho.Fragment.DetailsFragment;
 import com.kalerkantho.Utils.AppConstant;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 

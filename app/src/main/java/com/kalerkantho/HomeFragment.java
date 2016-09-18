@@ -20,7 +20,7 @@ import android.widget.ProgressBar;
 
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistData;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.kalerkantho.Adapter.RecyclerAdapter;

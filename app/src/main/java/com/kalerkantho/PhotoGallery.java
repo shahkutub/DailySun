@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.Adapter.CustomPagerAdapter;
 import com.kalerkantho.Utils.AppConstant;
 

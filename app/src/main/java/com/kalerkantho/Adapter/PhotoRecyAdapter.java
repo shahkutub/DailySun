@@ -1,7 +1,5 @@
 package com.kalerkantho.Adapter;
 import android.app.Activity;
-
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -10,17 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.app.FragmentManager;
-
 
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.bumptech.glide.Glide;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
-import com.kalerkantho.Dialog.PhotoViewDialog;
 import com.kalerkantho.Model.CommonNewsItem;
 import com.kalerkantho.Model.OnItemClickListenerNews;
 import com.kalerkantho.PhotoGallery;
-import com.dailysun.R;
 import com.kalerkantho.Utils.AlertMessage;
 import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;

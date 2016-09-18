@@ -24,7 +24,7 @@ import com.kalerkantho.Adapter.AllOnlineRecyAdapter;
 import com.kalerkantho.Adapter.MyFvRecyAdapter;
 import com.kalerkantho.Model.Category;
 import com.kalerkantho.MyDb.MyDBHandler;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.DividerItemDecoration;
 import com.kalerkantho.holder.AllCategory;

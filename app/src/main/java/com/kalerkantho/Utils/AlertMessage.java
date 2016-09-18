@@ -3,7 +3,7 @@ package com.kalerkantho.Utils;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import com.dailysun.R;
+import com.dailysun.app.R;
 
 
 public class AlertMessage {

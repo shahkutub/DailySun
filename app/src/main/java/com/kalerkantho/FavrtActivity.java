@@ -21,7 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.kalerkantho.Adapter.FavrtRecycleAdapter;
 import com.kalerkantho.Model.DetailsModel;

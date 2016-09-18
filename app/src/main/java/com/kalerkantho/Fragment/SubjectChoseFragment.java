@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dailysun.R;
+import com.dailysun.app.R;
 
 /**
  * Created by Ratan on 7/29/2015.

@@ -15,14 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aapbd.utils.storage.PersistData;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.kalerkantho.Adapter.AllNewsRecyAdapter;
 import com.kalerkantho.Model.Category;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.Utils.DividerItemDecoration;
-import com.kalerkantho.holder.AllCategory;
 import com.kalerkantho.holder.MagazineCategory;
 
 import java.util.ArrayList;

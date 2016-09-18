@@ -1,7 +1,6 @@
 package com.kalerkantho.Adapter;
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
@@ -14,10 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.dailysun.app.R;
 import com.kalerkantho.DetailsActivity;
 import com.kalerkantho.Dialog.CatListDialogFragment;
 import com.kalerkantho.Model.OnItemClickListenerNews;
-import com.dailysun.R;
 import com.kalerkantho.Utils.AppConstant;
 import com.kalerkantho.holder.AllCommonNewsItem;
 

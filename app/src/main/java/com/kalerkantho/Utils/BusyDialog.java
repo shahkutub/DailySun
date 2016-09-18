@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.dailysun.R;
+import com.dailysun.app.R;
 
 
 public class BusyDialog {

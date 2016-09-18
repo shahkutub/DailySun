@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.kalerkantho.Model.Category;
 import com.kalerkantho.Model.OnItemClickListener;
 import com.kalerkantho.MyDb.MyDBHandler;
-import com.dailysun.R;
+import com.dailysun.app.R;
 
 import java.util.ArrayList;
 import java.util.List;

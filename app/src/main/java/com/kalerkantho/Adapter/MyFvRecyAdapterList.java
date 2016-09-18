@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 import com.kalerkantho.DetailsActivity;
 import com.kalerkantho.Model.CommonNewsItem;
 import com.kalerkantho.Model.OnItemClickListenerNews;
-import com.dailysun.R;
+import com.dailysun.app.R;
 
 import java.util.ArrayList;
 import java.util.List;

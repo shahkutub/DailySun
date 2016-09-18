@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.aapbd.utils.geolocation.GPSTracker;
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistData;

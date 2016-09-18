@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "739882467219",
-    "firebase_url": "https://dailysun-d178d.firebaseio.com",
-    "project_id": "dailysun-d178d",
-    "storage_bucket": "dailysun-d178d.appspot.com"
+    "project_number": "191604609480",
+    "firebase_url": "https://daily-sun-3b585.firebaseio.com",
+    "project_id": "daily-sun-3b585",
+    "storage_bucket": "daily-sun-3b585.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:739882467219:android:5f3e75b4abc86173",
+        "mobilesdk_app_id": "1:191604609480:android:7a371e58a6964343",
         "android_client_info": {
-          "package_name": "com.dailysun"
+          "package_name": "com.dailysun.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "739882467219-hcmhf7vtijffgqt3ab1rmeep8bra3klv.apps.googleusercontent.com",
+          "client_id": "191604609480-br1e2hqo3hq287pbc2poschv6kvdisae.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBDQG-aGwYlHb7_trX2wWZv_5mmT8CAT7g"
+          "current_key": "AIzaSyAplJDaBhzvgYG7oETt871SL31EiDqN4H4"
         }
       ],
       "services": {

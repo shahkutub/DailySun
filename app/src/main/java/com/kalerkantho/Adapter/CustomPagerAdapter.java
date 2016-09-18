@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.Utils.AppConstant;
 
 public class CustomPagerAdapter extends PagerAdapter {

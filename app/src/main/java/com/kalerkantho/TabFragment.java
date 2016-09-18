@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.dailysun.R;
+import com.dailysun.app.R;
 import com.kalerkantho.Fragment.AllnewsFragment;
 import com.kalerkantho.Fragment.LatestNewsFragment;
 import com.kalerkantho.Fragment.MagazineListFragment;
@@ -20,7 +20,6 @@ import com.kalerkantho.Fragment.MostReadFragment;
 import com.kalerkantho.Fragment.NirbaChitoCategoryFragment;
 import com.kalerkantho.Fragment.PrintVFragment;
 import com.kalerkantho.Fragment.SelectedNewsFragment;
-import com.kalerkantho.Fragment.SubjectLikeFragment;
 import com.kalerkantho.Fragment.TopNewsFragment;
 
 

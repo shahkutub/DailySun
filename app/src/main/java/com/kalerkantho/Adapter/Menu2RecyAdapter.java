@@ -1,7 +1,6 @@
 package com.kalerkantho.Adapter;
 import android.app.Activity;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -12,9 +11,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dailysun.app.R;
 import com.kalerkantho.Dialog.CatListDialogFragment;
 import com.kalerkantho.Model.Category;
-import com.dailysun.R;
 import com.kalerkantho.Utils.AppConstant;
 
 import java.util.ArrayList;

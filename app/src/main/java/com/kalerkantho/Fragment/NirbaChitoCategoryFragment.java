@@ -1,15 +1,11 @@
 package com.kalerkantho.Fragment;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -17,31 +13,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.aapbd.utils.network.AAPBDHttpClient;
 import com.aapbd.utils.storage.PersistData;
+import com.dailysun.app.R;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.kalerkantho.Adapter.LatestRecyAdapter;
-import com.kalerkantho.Adapter.MyFvRecyAdapterList;
-import com.kalerkantho.Model.Category;
 import com.kalerkantho.Model.CommonNewsItem;
-import com.kalerkantho.MyDb.MyDBHandler;
-import com.dailysun.R;
-import com.kalerkantho.TabFragment;
-import com.kalerkantho.Utils.AlertMessage;
 import com.kalerkantho.Utils.AllURL;
 import com.kalerkantho.Utils.AppConstant;
-import com.kalerkantho.Utils.DividerItemDecoration;
 import com.kalerkantho.Utils.NetInfo;
 import com.kalerkantho.Utils.VerticalSpaceItem;
 import com.kalerkantho.holder.AllCommonNewsItem;
 import com.kalerkantho.holder.AllNewsObj;
-import com.kalerkantho.holder.AllNirbahito;
 
 import java.util.ArrayList;
 import java.util.List;
