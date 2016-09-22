@@ -297,7 +297,7 @@ public class DetailsFragment extends Fragment {
                 if(ContextCompat.checkSelfPermission(con, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
                     ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
                 }else{
-                    
+
                     Picasso.with(con).load(allDetail.getNews().getImage()).memoryPolicy(MemoryPolicy.NO_CACHE).into(target);
                 }
 
@@ -666,8 +666,8 @@ public class DetailsFragment extends Fragment {
         String bodyText = allDetail.getNews().getDetails();
         bodyText = bodyText.replaceAll("<p>", "\n");
         bodyText = bodyText.replaceAll("</p>", "\n");
-        String finalStr = firstText + "" + bodyText;
-
+       // String finalStr = firstText + "" + bodyText;
+        String finalStr = firstText + "" + bodyText+"\n\n"+allDetail.getNews().getNews_url();
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("image/jpeg");
         intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name) + ": " + allDetail.getNews().getTitle());

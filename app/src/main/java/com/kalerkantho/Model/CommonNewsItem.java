@@ -2,8 +2,6 @@ package com.kalerkantho.Model;
 
 import android.text.TextUtils;
 
-import com.kalerkantho.Utils.AppConstant;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,6 +22,7 @@ public class CommonNewsItem {
     private String url;
     private String category_name;
     private String details;
+    private String news_url;
 
     public String getDetails() {
         return details;
@@ -115,6 +114,14 @@ public class CommonNewsItem {
 
     public String getCategory_name() {
         return category_name;
+    }
+
+    public String getNews_url() {
+        return news_url;
+    }
+
+    public void setNews_url(String news_url) {
+        this.news_url = news_url;
     }
 
     public void setCategory_name(String category_name) {
