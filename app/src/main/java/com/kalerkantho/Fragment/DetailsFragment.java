@@ -669,7 +669,7 @@ public class DetailsFragment extends Fragment {
        // String finalStr = firstText + "" + bodyText;
         String finalStr = firstText + "" + bodyText+"\n\n"+allDetail.getNews().getNews_url();
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("image/jpeg");
+        intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name) + ": " + allDetail.getNews().getTitle());
         intent.putExtra(Intent.EXTRA_TEXT, finalStr);
         intent.putExtra(Intent.EXTRA_STREAM, uri);
